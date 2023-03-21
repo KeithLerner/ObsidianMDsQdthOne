@@ -183,10 +183,10 @@
   --color-pink: var(--pink2);
   --color-purple: var(--indigo2);
   --color-red: var(--crimson2);
-  --color-orange: var(--peach2);
+  --color-orange: var(--peach0);
   --color-yellow: var(--yellow0);
   --color-green: var(--green2);
-  --color-teal: var(--teal2);
+  --color-teal: var(--teal1);
   --color-cyan: var(--moonstone2);
   --color-blue: var(--frost2);
   --color-black: var(--night2);
@@ -623,6 +623,9 @@ button.mod-warning:hover {
   background-color: var(--color-base-1);
 }
 
+/*Breadcrumbs*/
+.view-header-title-container {}
+
 /*Inactive? Note Titlebar*/
 /*Note Title Bar: Text*/
 .view-header-title {
@@ -650,7 +653,7 @@ button.mod-warning:hover {
 /*Bold*/
 /*Reading View*/
 strong {
-  font-weight: var(--weight-bold);
+  
   color: var(--color-text-bold);
 } 
 /*Editing View*/
@@ -676,6 +679,7 @@ em {
   background-color: var(--color-text-highlight-active-background);
   color: var(--text-on-accent);   
 }
+/*Highlight and Italic*/
 .markdown-rendered mark.cm-em,
 .markdown-rendered mark em,
 .cm-s-obsidian span.cm-formatting-highlight.cm-em,
@@ -686,6 +690,7 @@ em {
   color: var(--text-on-accent);
   text-align: left;
 }
+/*Highlight and Bold*/
 .markdown-rendered mark.cm-strong,
 .markdown-rendered mark strong,
 .cm-s-obsidian span.cm-formatting-highlight.cm-strong,
@@ -694,7 +699,9 @@ em {
 .cm-s-obsidian span.cm-highlight strong {
   background-color: var(--color-text-bold);
   color: var(--text-on-accent);
+  font-weight: var(--weight-bold);
 }
+/*Highlight and Strikethrough*/
 .markdown-rendered mark.cm-strikethrough,
 .markdown-rendered mark del,
 .cm-s-obsidian span.cm-formatting-highlight.cm-strikethrough,
@@ -716,7 +723,7 @@ del {
 } 
 
 /*--Headers/Headings--*/
-.cm-editor .inline-title {
+.inline-title {
 	color: var(--color-text-title);
 	font-size: var(--size-text-title);
 	font-family: var(--font-title);
@@ -731,6 +738,10 @@ del {
     7px 7px rgba(0,0,0,0.05),
     8px 8px rgba(0,0,0,0.05),
     9px 9px rgba(0,0,0,0.05)
+}
+
+.cm-editor .inline-title {
+  font-size: 0;
 }
 
 .cm-header-1.cm-header-1,
@@ -968,19 +979,20 @@ tbody > tr {
   background-color: var(--color-base-2);
 }
  
-.markdown-preview-view th,
-.markdown-preview-view td {
+th,
+td {
   padding: 4px 20px;
   border: 1px solid var(--color-base-4);
   color: var(--color-text-normal);
 }
 
-.markdown-preview-view thead {
+thead {
   background-color: var(--color-base-3);
 }
 
 /*--Tags--*/
-.tag:not(.token) {
+a.tag,
+.tag {
 	border: none;
   color: var(--yellow5);
 	background-color: var(--yellow0);
@@ -989,8 +1001,10 @@ tbody > tr {
 	text-decoration: none;
 	margin: auto;
 	border-radius: 25px;
+  transition: 250ms;
 }
-.tag:not(.token):hover {
+a.tag:hover,
+.tag:hover {
   border-style: solid;
   border-width: 5px;
 	border-color: var(--yellow5);
