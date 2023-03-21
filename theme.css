@@ -1,0 +1,1139 @@
+@keyframes rainbow {
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: 100%;
+  }
+}
+
+/* Colors and Fonts */
+:root {
+  /* Custom Colors */
+	--day0: rgb(250, 249, 245);  
+  --day1: rgb(248, 248, 235);
+  --day2: rgb(241, 237, 225);
+  --day3: rgb(234, 226, 215);
+  --day4: rgb(228, 215, 205);
+  --day5: rgb(220, 204, 195);
+  --pink0: rgb(194, 30, 150);
+  --pink1: rgb(222, 43, 174);
+  --pink2: rgb(227, 79, 188);
+  --pink3: rgb(233, 114, 201);
+  --pink4: rgb(238, 149, 215);
+  --pink5: rgb(244, 185, 228);
+  --indigo0: rgb(72, 12, 151);
+  --indigo1: rgb(90, 15, 189);
+  --indigo2: rgb(109, 18, 226);
+  --indigo3: rgb(130, 47, 238);
+  --indigo4: rgb(153, 85, 241);
+  --indigo5: rgb(176, 123, 244);
+  --crimson0: rgb(95, 7, 26);
+  --crimson1: rgb(133, 10, 37);
+  --crimson2: rgb(171, 13, 47);
+  --crimson3: rgb(209, 16, 58);
+  --crimson4: rgb(238, 27, 73);
+  --crimson5: rgb(241, 65, 103);
+  --peach0: rgb(183, 68, 1);
+  --peach1: rgb(223, 83, 1);
+  --peach2: rgb(254, 100, 11);
+  --peach3: rgb(254, 126, 52);
+  --peach4: rgb(254, 152, 93);
+  --peach5: rgb(254, 178, 133);
+  --yellow0: rgb(181, 137, 0);
+	--yellow1: rgb(224, 168, 0);
+	--yellow2: rgb(255, 194, 10);
+	--yellow3: rgb(255, 204, 51);
+	--yellow4: rgb(255, 214, 92);
+	--yellow5: rgb(255, 224, 133);
+  --green0: rgb(39, 97, 26);
+  --green1: rgb(52, 129, 34);
+  --green2: rgb(65, 161, 43);
+  --green3: rgb(77, 193, 51);
+  --green4: rgb(102, 208, 78);
+  --green5: rgb(129, 216, 110);
+  --teal0: rgb(76, 149, 108);
+  --teal1: rgb(83, 162, 142);
+  --teal2: rgb(93, 172, 152);
+  --teal3: rgb(107, 179, 161);
+  --teal4: rgb(120, 186, 169);
+  --teal5: rgb(134, 193, 178); 
+  --moonstone0:  rgb(0, 57, 67);
+  --moonstone1:  rgb(0, 87, 102);
+  --moonstone2:  rgb(0, 104, 122);
+  --moonstone3:  rgb(0, 121, 143);
+  --moonstone4:  rgb(0, 139, 163);
+  --moonstone5:  rgb(0, 156, 184);
+  --frost0: rgb(65, 102, 220);
+  --frost1: rgb(83, 115, 223);
+  --frost2: rgb(94, 124, 226);
+  --frost3: rgb(117, 143, 230);
+  --frost4: rgb(134, 157, 233);
+  --frost5: rgb(152, 171, 236);   
+  --night0: rgb(11, 10, 11);
+  --night1: rgb(32, 29, 32);
+  --night2: rgb(54, 48, 54);
+  --night3: rgb(76, 67, 76);
+  --night4: rgb(97, 86, 97);
+  --night5: rgb(119, 105, 119);
+
+  /* Custom Fonts */
+  --font-default: 'Consolas', 'Source Sans Pro', 'Segoe UI Emoji', sans-serif;
+  --font-title: 'Helvetica', 'Jomhuria', serif;
+  --font-headings: 'Tahoma', serif;
+  --font-monospace: 'Cascida Code', 'Source Code Pro', monospace;
+  --font-interface: var(--font-default);
+  --size-text-title: 5em;
+  --size-text-h1: 3em;
+  --size-text-h2: 30px;
+  --size-text-h3: 27px;
+  --size-text-h4: 24px;
+  --size-text-h5: 21px;
+  --size-text-h6: 18px;
+  --size-text-p: 15px;
+  --size-icon: 15px;
+  --letterspacing-text-headers: 1.2px;
+  --letterspacing-text-p: 1px;
+  --weight-thin: 100;
+  --weight-extralight: 200;
+  --weight-light: 300;
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+  --weight-maxbold: 900;
+  /*
+  If the font isn't installed in the system, 
+  it will go down the list until it finds one that is.
+  */
+
+  --default-font: var(--font-default); /*Note and Settings Text*/
+  --font-monospace: var(--font-monospace); /*Code block text*/
+}
+
+/*Dark Theme Variables*/
+.theme-dark {
+  /* Colors for dark Theme */
+  --color-white: var(--day3);
+  --color-pink: var(--pink5);
+  --color-purple: var(--indigo3);
+  --color-red: var(--crimson1);
+  --color-orange: var(--peach3);
+  --color-yellow: var(--yellow0);
+  --color-green: var(--green2);
+  --color-teal: var(--teal3);
+  --color-cyan: var(--moonstone3);
+  --color-blue: var(--frost3);
+  --color-black: var(--night3);
+  --color-base-0: var(--night0);
+  --color-base-1: var(--night1);
+  --color-base-2: var(--night2);
+  --color-base-3: var(--night3);
+  --color-base-4: var(--night4);
+  --color-base-5: var(--night5);
+  --color-text-normal: var(--teal1);
+  --color-text-muted: var(--teal3);
+  --color-text-faint: var(--teal5);
+  --color-text-bold: var(--color-cyan);
+  --color-text-italic: var(--color-green);
+  --color-text-strikethrough: var(--color-red);
+  --color-text-highlight: var(--color-white);
+  --color-text-highlight-background: var(--color-yellow);
+  --color-text-highlight-active-background: var(--color-orange);
+  --color-text-title: var(--color-pink);
+  --color-text-h1: var(--color-red);
+  --color-text-h2: var(--color-orange);
+  --color-text-h3: var(--frost0);
+  --color-text-h4: var(--frost1);
+  --color-text-h5: var(--frost2);
+  --color-text-h6: var(--frost3);
+  --color-horizontal-rule: var(--color-purple);
+  --color-list-bullets: var(--color-pink);
+  --color-list-indentation-indicator: magenta;
+  --color-list-indentation-indicator-hover: var(--color-pink);
+  --color-checklist-empty: var(--color-red);
+  --color-checklist-empty-border: var(--color-red);
+  --color-checklist-full: var(--color-green);
+  --color-checklist-full-border: var(--color-green);
+  --color-tag: var(--color-yellow);
+  --color-tag-hover: var(--yellow0);
+  --color-code-normal: var(--color-text-muted);
+  --color-code-comment: var(--color-text-faint);
+  --color-code-function: var(--color-yellow);
+  --color-code-important: var(--color-orange);
+  --color-code-keyword: var(--color-pink);
+  --color-code-property: var(--color-blue);
+  --color-code-punctuation: var(--color-text-muted);
+  --color-code-string: var(--color-green);
+  --color-code-tag: var(--color-red);
+  --color-code-value: var(--color-purple);
+
+  /* Generic Coloring */
+  --background-primary:         var(--color-base-1);
+	--background-primary-alt:     var(--color-base-2);
+	--background-secondary:       var(--color-base-2);
+	--background-secondary-alt:   var(--color-base-3);
+  --text-selection:             var(--color-white);
+}
+
+.theme-light {
+  /* Colors for light Theme */
+  --color-white: var(--day2);
+  --color-pink: var(--pink2);
+  --color-purple: var(--indigo2);
+  --color-red: var(--crimson2);
+  --color-orange: var(--peach2);
+  --color-yellow: var(--yellow0);
+  --color-green: var(--green2);
+  --color-teal: var(--teal2);
+  --color-cyan: var(--moonstone2);
+  --color-blue: var(--frost2);
+  --color-black: var(--night2);
+  --color-base-0: var(--day0);
+  --color-base-1: var(--day1);
+  --color-base-2: var(--day2);
+  --color-base-3: var(--day3);
+  --color-base-4: var(--day4);
+  --color-base-5: var(--day5);
+  --color-text-normal: var(--night1);
+  --color-text-muted: var(--night3);
+  --color-text-faint: var(--night5);
+  --color-text-bold: var(--color-cyan);
+  --color-text-italic: var(--color-green);
+  --color-text-strikethrough: var(--color-red);
+  --color-text-highlight: var(--color-white);
+  --color-text-highlight-background: var(--color-yellow);
+  --color-text-highlight-active-background: var(--color-orange);
+  --color-text-title: var(--color-cyan);
+  --color-text-h1: var(--frost0);
+  --color-text-h2: var(--frost1);
+  --color-text-h3: var(--frost2);
+  --color-text-h4: var(--frost3);
+  --color-text-h5: var(--frost4);
+  --color-text-h6: var(--frost5);
+  --color-horizontal-rule: var(--color-purple);
+  --color-list-bullets: var(--color-pink);
+  --color-list-indentation-indicator: magenta;
+  --color-list-indentation-indicator-hover: var(--color-pink);
+  --color-checklist-empty: var(--color-red);
+  --color-checklist-empty-border: var(--color-red);
+  --color-checklist-full: var(--color-green);
+  --color-checklist-full-border: var(--color-green);
+  --color-tag: var(--color-yellow);
+  --color-tag-hover: var(--yellow0);
+  --color-code-normal: var(--color-text-muted);
+  --color-code-comment: var(--color-text-faint);
+  --color-code-function: var(--color-yellow);
+  --color-code-important: var(--color-orange);
+  --color-code-keyword: var(--color-pink);
+  --color-code-property: var(--color-blue);
+  --color-code-punctuation: var(--color-text-muted);
+  --color-code-string: var(--color-green);
+  --color-code-tag: var(--color-red);
+  --color-code-value: var(--color-purple);
+
+  /* Generic Coloring */
+  --background-primary:         var(--color-base-1);
+	--background-primary-alt:     var(--color-base-2);
+	--background-secondary:       var(--color-base-2);
+	--background-secondary-alt:   var(--color-base-3);
+  --text-selection:             var(--color-yellow);
+}
+
+/*Box Sizing Reset - this makes it easier to set any ::before and ::after pseudo-elements' dimensions,
+since it includes any border and padding into the height and width values you set.
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}*/
+
+/*----Startup Progress Bar Screen----*/
+/*Startup Progress Bar Window*/
+.progress-bar {
+  background-color: var(--color-base-1);
+  color: var(--color-text-bold);
+}
+
+/*Startup Text*/
+.progress-bar .progress-bar-message {
+  color: var(--color-text-bold);
+  font-weight: var(--weight-extrabold);
+}
+
+/*Startup Progress Bar Background*/
+.progress-bar-indicator .progress-bar-line {
+  color: var(--color-text-bold);
+}
+
+/*Startup Progress Bar Moving Line*/
+.progress-bar-indicator .progress-bar-subline {
+  color: var(--color-horizontal-rule);
+}
+
+/*----Settings----*/
+/*All Popup Windows: Settings*/
+.modal {
+  color: var(--color-text-normal);
+  background-color: var(--color-base-3);
+}
+
+/*Command Palette & Quick Switcher*/
+.prompt {
+  color: var(--color-text-normal);
+  background-color: var(--color-base-3);
+}
+
+/*The notifications in the top right*/
+.notice {
+  color: var(--color-text-normal);
+  background-color: var(--color-base-3);
+}
+
+/*Context Menu (Right CLick sth)*/
+.menu {
+  background-color: var(--color-base-3);
+}
+
+/*Setting Dropdown*/
+.dropdown, button:not(.clickable-icon), .dropdown option {
+  color: var(--color-text-normal);
+  background-color: var(--color-base-3);
+}
+
+/* Setting Dropdown Hover */
+.dropdown:hover, button:not(.clickable-icon):hover{
+  color: var(--color-text-highlight);
+  background-color: var(--color-green);
+}
+
+/* ------Community Content--- */
+.community-item .suggestion-highlight {
+  color: var(--color-red);
+}
+
+.community-item:hover {
+  --background-modifier-border-hover: var(--color-pink);
+}
+
+.community-item.is-selected,
+.community-item.is-selected:hover {
+  --interactive-accent: var(--color-green);
+}
+
+
+/*--Extras--*/
+/*Tooltip Popup*/
+.tooltip {
+  background-color: var(--color-base-3);
+  color: var(--color-text-italic);
+  border: solid 1px var(--color-green);
+}
+.tooltip .tooltip-arrow {
+  border: transparent;
+}
+
+/*----Workspace----*/
+/* Top Bar? */
+
+/* ribbons, the thin vertical bars to the far left/right */
+.workspace-ribbon {
+  background-color: var(--color-base-2);
+}
+
+/*Side Panels*/
+.workspace-tabs {
+  background-color: var(--color-base-2);
+}
+
+/*Side Panel: Icons*/
+.workspace-tab-header-inner-icon {
+  background-color: transparent;
+  border-style:solid;
+  border-radius: 5px;
+  border-color: transparent;
+}
+
+/* Tab Close Button */
+.workspace-tab-header-inner-close-button {
+  background-color: transparent;
+  border: transparent;
+  border-radius: 10px;
+  border-width: 1px;
+}
+
+/* Tab Close Button On Hover */
+.workspace-tab-header-inner-close-button:hover,
+.workspace-tab-header-inner-close-button:hover svg {
+  color: var(--color-text-highlight);
+  border: transparent;
+  background-color: var(--color-red);
+  background-clip: border-box;
+  border-radius: 10px;
+  transition: 250ms;
+}
+
+/*Active Tab Header*/
+.workspace-tab-header.is-active,
+.workspace-tab-header.is-focused {
+  color: var(--color-orange);
+}
+
+/*--File Explorer--*/
+/*Nav Top: Create Note, Sort, Create Folder*/
+.nav-header {
+  border-style:solid;
+  border-radius: 5px;
+  border-color: transparent;
+}
+
+/*Folder*/
+.nav-folder {
+  border-style:solid;
+  border-radius: 5px;
+  border-color: transparent;
+}
+
+/* Nav Title */
+.nav-folder-title:hover,
+.nav-folder.mod-root > .nav-folder-title:hover {
+  background-image: repeating-linear-gradient(90deg, 
+  var(--color-pink) 5%, var(--color-red) 15%, var(--color-orange) 25%, 
+  var(--color-yellow) 35%, var(--color-green) 45%, var(--color-teal) 55%, 
+  var(--color-blue) 65%, var(--color-cyan) 75%, var(--color-purple) 85%, 
+  var(--color-pink) 95%);
+  background-size: 1000% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 12s linear infinite;
+}
+
+/* Active file/folder */
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+  color: var(--color-orange);
+  background-color: var(--color-base-1);
+}
+
+/* File Navigator Folder Names */
+.nav-folder-title-content {
+  color: var(--color-text-normal);
+  font-weight: var(--weight-bold);
+}
+
+/* File Navigator Files */
+:not(.is-grabbing) .nav-file-title:hover,
+:not(.is-grabbing) .nav-folder-title:hover,
+.tree-item-self.is-clickable:hover {
+  background-image: none;
+  background-color: var(--color-base-2);
+  background-size: 1000% 100%;
+  -webkit-text-fill-color: var(--color-purple);
+  transition: 250ms;
+}
+
+/*File Extension Label*/
+.nav-file-tag,
+.nav-file-tag:hover {
+  background-color: transparent;
+  color: var(--color-teal);
+  font-weight: var(--weight-extrabold);
+}
+
+/* Folder Icons */
+.nav-folder-collapse-indicator,
+.nav-folder.mod-root > .nav-folder-title .nav-folder-title-content::before {
+  display: none;
+}
+
+/* Closed Folder Icons */
+.nav-folder.is-collapsed .nav-folder-title .nav-folder-title-content::before {
+  -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="16" height="16" viewBox="0 0 26 26"%3E%3Cpath fill="currentColor" d="M4 20q-.825 0-1.413-.588T2 18V6q0-.825.588-1.413T4 4h5.175q.4 0 .763.15t.637.425L12 6h8q.825 0 1.413.588T22 8v10q0 .825-.588 1.413T20 20H4ZM4 6v12h16V8h-8.825l-2-2H4Zm0 0v12V6Z"%2F%3E%3C%2Fsvg%3E');
+  transition: -webkit-mask-image 0.2s ease;
+}
+
+/*Folder Icon Transform*/
+.nav-folder.is-collapsed .nav-folder-title .nav-folder-title-content::before,
+.nav-folder .nav-folder-title .nav-folder-title-content::before {
+  width: var(--size-icon);
+  height: var(--size-icon);
+  margin-right: 4px;
+  background-color: currentcolor;
+  background-repeat: no-repeat;
+  vertical-align: -2px;
+}
+.nav-folder.is-collapsed .nav-folder-title .nav-folder-title-content::before:hover,
+.nav-folder .nav-folder-title .nav-folder-title-content::before:hover {
+  color: var(--color-text-highlight);
+}
+
+/* Open Folder Icons */
+.nav-folder .nav-folder-title .nav-folder-title-content::before {
+  display: inline-block;
+  width: var(--size-icon);
+  height: var(--size-icon);
+  background-size: 16px 16px;
+  content: "";
+  -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="16" height="16" viewBox="0 0 26 26"%3E%3Cpath fill="currentColor" d="M4 20q-.825 0-1.413-.588T2 18V6q0-.825.588-1.413T4 4h5.175q.4 0 .763.15t.637.425L12 6h8q.825 0 1.413.588T22 8H11.175l-2-2H4v12l1.975-6.575q.2-.65.738-1.038T7.9 10h12.9q1.025 0 1.613.813t.312 1.762l-1.8 6q-.2.65-.738 1.038T19 20H4Zm2.1-2H19l1.8-6H7.9l-1.8 6Zm0 0l1.8-6l-1.8 6ZM4 10V6v4Z"%2F%3E%3C%2Fsvg%3E');
+  transition: -webkit-mask-image 0.2s ease;
+}
+
+/*Status Bar*/
+.status-bar {
+  color: var(--color-text-normal);
+  background-color: var(--color-base-3);
+}
+
+/*--Title Bar--*/
+/*Title Bar*/
+.titlebar,
+.titlebar.is-focused {
+  color: var(--color-text-normal);
+  background-color: var(--color-base-3);
+}
+
+/*Navigation Button - Back */
+.mod-back {
+  color: var(--color-text-normal);
+  background-color: var(--color-base-3);
+  border-style:solid;
+  border-radius: 5px;
+  border-color: transparent;
+}
+
+/*Navigation Button - Forward*/
+.mod-forward {
+  color: var(--color-text-normal);
+  background-color: var(--color-base-3);
+  border-style:solid;
+  border-radius: 5px;
+  border-color: transparent;
+}
+
+/*Window Control- Minimize*/
+.mod-minimize {
+  border-style:solid;
+  border-radius: 7px;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+/*Window Control- Minimize*/
+.mod-maximize {
+  border-style:solid;
+  border-radius: 7.5px;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+/*Window Control- Close*/
+.mod-close {
+  border-style:solid;
+  border-radius: 7px;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+/*Window Control- Minimize Hover*/
+.mod-minimize:hover {
+  background-color: var(--color-green);
+  color: var(--color-text-highlight);
+  border-style:solid;
+  border-radius: 7px;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+/*Window Control- Minimize Hover*/
+.mod-maximize:hover {
+  background-color: var(--color-yellow);
+  color: var(--color-text-highlight);
+  border-style:solid;
+  border-radius: 7px;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+/*Window Control- Close Hover*/
+.mod-close:hover {
+  background-color: var(--color-red);
+  color: var(--color-text-highlight);
+  border-style:solid;
+  border-radius: 7px;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+/*Buttons*/
+/*Default Buttons*/
+button {
+  border-style:solid;
+  border-radius: 5px;
+  border-color: transparent;
+}
+
+/*Settings Buttons*/
+button.mod-cta {
+  border-style:solid;
+  border-radius: 5px;
+  border-color: transparent;
+}
+
+/*Warning Buttons*/
+button.mod-warning {
+  border-style:solid;
+  border-radius: 5px;
+  border-color: transparent;
+}
+
+/*Default Buttons Hover*/
+button:hover {
+  background-color: var(--color-white);
+  color: var(--color-text-bold);
+  font-weight: var(--weight-extrabold);
+  border-style:solid;
+  border-radius: 5px;
+  border-color: transparent;
+}
+
+/*Settings Buttons Hover*/
+button.mod-cta:hover {
+  background-color: var(--color-white);
+  color: var(--color-text-bold);
+  font-weight: var(--weight-extrabold);
+  border-style:solid;
+  border-radius: 5px;
+  border-color: transparent;
+}
+
+/*Warning Buttons Hover*/
+button.mod-warning:hover {
+  background-color: var(--color-white);
+  color: var(--color-text-bold);
+  font-weight: var(--weight-extrabold);
+  border-style:solid;
+  border-radius: 5px;
+  border-color: transparent;
+}
+
+/*--Workspace: Notes--*/
+/*Note Title Bar*/
+.workspace-leaf .view-header {
+  background-color: var(--color-base-1);
+}
+
+/*Inactive? Note Titlebar*/
+/*Note Title Bar: Text*/
+.view-header-title {
+  color: var(--color-text-faint);
+}
+
+/*Active Note Titlebar*/
+/*Note Title Bar: Text*/
+.workspace-leaf.mod-active .view-header-title {
+  color: var(--color-yellow);
+}
+
+/*Note Title Bar: Note Icon*/
+.workspace-leaf.mod-active .view-header-icon {
+  background-color: transparent;
+  color: var(--color-text-faint);
+}
+
+/*Note Title Bar: Settings Icons*/
+.workspace-leaf.mod-active .view-action {
+  color: var(--color-text-faint);
+}
+
+/*--Emphasis--*/
+/*Bold*/
+/*Reading View*/
+strong {
+  font-weight: var(--weight-bold);
+  color: var(--color-text-bold);
+} 
+/*Editing View*/
+.cm-s-obsidian .cm-strong {
+  font-weight: var(--weight-extrabold);
+  color: var(--color-text-bold);
+} 
+
+/*Italic/Emphasis*/
+/*Reading View*/
+em {
+  color: var(--color-text-italic);
+} 
+/*Editing View*/
+.cm-em {
+  color: var(--color-text-italic);
+} 
+
+/*Highlight*/
+.markdown-rendered mark,
+.cm-s-obsidian span.cm-formatting-highlight,
+.cm-s-obsidian span.cm-highlight {
+  background-color: var(--color-text-highlight-active-background);
+  color: var(--text-on-accent);   
+}
+.markdown-rendered mark.cm-em,
+.markdown-rendered mark em,
+.cm-s-obsidian span.cm-formatting-highlight.cm-em,
+.cm-s-obsidian span.cm-formatting-highlight em,
+.cm-s-obsidian span.cm-highlight.cm-em,
+.cm-s-obsidian span.cm-highlight em {
+  background-color: var(--color-green);
+  color: var(--text-on-accent);
+  text-align: left;
+}
+.markdown-rendered mark.cm-strong,
+.markdown-rendered mark strong,
+.cm-s-obsidian span.cm-formatting-highlight.cm-strong,
+.cm-s-obsidian span.cm-formatting-highlight strong,
+.cm-s-obsidian span.cm-highlight.cm-strong,
+.cm-s-obsidian span.cm-highlight strong {
+  background-color: var(--color-text-bold);
+  color: var(--text-on-accent);
+}
+.markdown-rendered mark.cm-strikethrough,
+.markdown-rendered mark del,
+.cm-s-obsidian span.cm-formatting-highlight.cm-strikethrough,
+.cm-s-obsidian span.cm-formatting-highlight del,
+.cm-s-obsidian span.cm-highlight.cm-strikethrough,
+.cm-s-obsidian span.cm-highlight del {
+  background-color: var(--color-text-strikethrough);
+  color: var(--text-on-accent);
+}
+
+/*Strikethrough*/
+/*Editing View*/
+.cm-strikethrough {
+  color: var(--color-text-strikethrough);
+} 
+/*Reading View*/
+del {
+  color: var(--color-text-strikethrough);
+} 
+
+/*--Headers/Headings--*/
+.cm-editor .inline-title {
+	color: var(--color-text-title);
+	font-size: var(--size-text-title);
+	font-family: var(--font-title);
+	margin-bottom: 25px !important;
+	text-align: center;
+	text-shadow: 1px 1px rgba(0,0,0,0.05),
+    2px 2px rgba(0,0,0,0.05),
+    3px 3px rgba(0,0,0,0.05),
+    4px 4px rgba(0,0,0,0.05),
+    5px 5px rgba(0,0,0,0.05),
+    6px 6px rgba(0,0,0,0.05),
+    7px 7px rgba(0,0,0,0.05),
+    8px 8px rgba(0,0,0,0.05),
+    9px 9px rgba(0,0,0,0.05)
+}
+
+.cm-header-1.cm-header-1,
+.markdown-preview-section.markdown-preview-section h1 {
+	color: var(--color-text-h1);
+	font-size: var(--size-text-h1);
+	font-family: var(--font-headings);
+	text-align: center;
+	text-shadow: 1px 1px rgba(0,0,0,0.05),
+    2px 2px rgba(0,0,0,0.05),
+    3px 3px rgba(0,0,0,0.05),
+    4px 4px rgba(0,0,0,0.05),
+    5px 5px rgba(0,0,0,0.05),
+    6px 6px rgba(0,0,0,0.05),
+    7px 7px rgba(0,0,0,0.05),
+    8px 8px rgba(0,0,0,0.05),
+    9px 9px rgba(0,0,0,0.05)
+}
+
+.cm-header-2,
+.markdown-preview-section h2 {
+	color: var(--color-text-h2);
+	font-size: var(--size-text-h2);
+	font-family: var(--font-headings);
+}
+
+.cm-header-3,
+.markdown-preview-section h3 {
+	color: var(--color-text-h3);
+	font-size: var(--size-text-h3);
+	font-family: var(--font-headings);
+}
+
+.cm-header-4,
+.markdown-preview-section h4 {
+	color: var(--color-text-h4);
+	font-size: var(--size-text-h4);
+	font-family: var(--font-headings);
+}
+
+.cm-header-5,
+.markdown-preview-section h5 {
+	color: var(--color-text-h5);
+	font-size: var(--size-text-h5);
+	font-family: var(--font-headings);
+}
+
+.cm-header-6,
+.markdown-preview-section h6 {
+	color: var(--color-text-h6);
+	font-size: var(--size-text-h6);
+	font-family: var(--font-headings);
+}
+
+/* Normal Text */
+body {
+  /* Generic things */
+  --background-modifier-cover: rgba(0, 0, 0, 0.8); /*Obsidian Title Bar Bg*/
+  --background-primary: var(--color-base-1); /*Note background*/
+  --background-primary-alt: var(--color-base-0); /*Note Title background active*/
+  --background-secondary: var(--color-base-2); /*Sidebar background*/
+  --background-secondary-alt: var(--color-base-1); /*Sidebar Title background*/
+  --background-modifier-border: var(--color-text-bold); /*Border outline of quotes, tables, line breaks*/
+  --text-normal: var(--color-text-normal); /*Text body of note*/
+  --text-muted: var(--color-text-muted); /*Text darker for sidebar, toggles, inactive, tags, etc*/
+  --text-accent: var(--color-text-bold); /*Links*/
+  --text-accent-hover: var(--color-horizontal-rule); /*Links hover*/
+  --text-faint: var(--color-text-faint); /*Link brackets color & Gutter Numbers*/
+  --text-highlight-bg: var(--color-text-highlight-background); /*Search Matches*/
+  --text-highlight-bg-active: var(--color-text-highlight-active-background); /*Active Search Match (Preview Mode)*/
+  --scrollbar-active-thumb-bg: var(--color-text-bold); /*Scrollbar Dragged Color*/
+  --interactive-normal: var(--color-base-3); /*Button Color*/
+  --interactive-hover: var(--color-yellow); /*Button Hovered Color*/
+  --interactive-accent: var(--text-accent); /*Workspace Note Title Underline*/
+  --interactive-accent-hover: var(--color-yellow); /*Menu Button Hover*/
+  --slider-track-background:var(--color-cyan); /*Settings Slider Backgrounds*/
+}
+
+/*--Horizontal Line--*/
+/*Reading Mode*/
+hr {
+  color: var(--color-horizontal-rule);
+} 
+/*Source Mode*/
+.hr.cm-line {
+  color: var(--color-horizontal-rule);
+} 
+/*Source Mode*/
+.HyperMD-hr-bg {
+  color: var(--color-horizontal-rule);
+} 
+
+/*HR Line Text*/
+/*Source Mode*/
+.cm-s-obsidian pre.HyperMD-hr {
+  color: var(--color-horizontal-rule);
+} 
+
+/*--Comments--*/
+/* html comments and obsidian style comments */
+.cm-comment {
+  color: var(--color-base-5);
+}
+
+/*--Code--*/
+/* Edit mode */
+.cm-s-obsidian pre.HyperMD-codeblock {     
+  font-family: var(--font-monospace);
+  font-weight: var(--weight-light);
+}
+
+/* Preview mode */
+.markdown-preview-view code {
+  font-family: var(--font-monospace);
+  font-weight: var(--weight-light);
+}
+
+/*--Links--*/
+.cm-s-obsidian .cm-formatting-link.cm-url,
+.cm-s-obsidian .cm-url,
+.cm-s-obsidian .cm-link,
+.cm-s-obsidian .cm-hmd-internal-link,
+.markdown-source-view.mod-cm6 .cm-link .cm-underline,
+.markdown-source-view.mod-cm6 .cm-url .cm-underline {
+  text-decoration-color: transparent;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  transition: 250ms;
+}
+
+.cm-s-obsidian .cm-formatting-link.cm-url:hover,
+.cm-s-obsidian .cm-url:hover,
+.cm-s-obsidian .cm-link:hover,
+.cm-s-obsidian .cm-hmd-internal-link:hover,
+.markdown-source-view.mod-cm6 .cm-link .cm-underline:hover,
+.markdown-source-view.mod-cm6 .cm-url .cm-underline:hover {
+  text-decoration-color: inherit;
+}
+
+.cm-s-obsidian .cm-formatting-link-string.cm-url,
+.cm-s-obsidian .cm-formatting-link.cm-link,
+.cm-s-obsidian .cm-formatting-link.cm-hmd-barelink,
+.cm-s-obsidian .cm-formatting-link.cm-formatting-link-start,
+.cm-s-obsidian .cm-formatting-link.cm-formatting-link-end {
+  color: var(--interactive-accent);
+}
+
+.cm-s-obsidian .is-flashing .cm-url .cm-underline:hover,
+.cm-s-obsidian .is-flashing span.cm-url:hover {
+  --link-external-color-hover: var(--interactive-accent-hover);
+}
+
+/*--Lists--*/
+.markdown-source-view ol > li,
+.markdown-source-view ul > li,
+.markdown-preview-view ol > li,
+.markdown-preview-view ul > li,
+.markdown-rendered ul > li,
+.mod-cm6 .HyperMD-list-line.cm-line {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.markdown-rendered.show-indentation-guide li > ul::before,
+.markdown-rendered.show-indentation-guide li > ol::before {
+  width: auto;
+}
+
+.list-item-part.clickable-icon:hover,
+.list-item-part.clickable-icon:active {
+  background-color: rgb(var(--ctp-accent));
+}
+
+/* Check Lists */
+input.task-list-item-checkbox {
+  border-style: solid;
+  border-color: var(--color-pink);
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: 250ms;
+}
+input.task-list-item-checkbox:hover {
+  border-style: solid;
+  border-color: var(--color-purple);
+  border-width: 5px;
+  border-radius: 100%;
+  background-color: transparent;
+  transition: 250ms;
+}
+input.task-list-item-checkbox:checked:hover {
+  border-style: double;
+  border-color: var(--color-purple);
+  border-width: 9px;
+  border-radius: 100%;
+  background-color: transparent;
+  transition: 250ms;
+}
+input.task-list-item-checkbox:checked {
+  border-style: double;
+  border-color: var(--color-orange);
+  border-width: 9px;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: 250ms;
+}
+
+
+/*--Blockquotes--*/
+/* Read view */
+.markdown-rendered blockquote {
+  font-weight: var(--weight-extralight);
+  color: var(--color-pink);
+  background-color: var(--color-base-2);
+  border-color: var(--color-pink);
+  border-radius: 5px;
+  border-width: 5px;
+}
+/* Edit view */
+.cm-s-obsidian span.cm-quote {
+  font-weight: var(--weight-extralight);
+  color: var(--color-pink);
+  background-color: transparent;
+  border-color: var(--color-pink);
+  border-radius: 5px;
+  border-width: 5px;
+}
+
+/*--Tables--*/
+tbody>tr:nth-child(odd) {
+  background-color: var(--color-base-2);
+}
+ 
+tbody > tr {
+  background-color: var(--color-base-2);
+}
+ 
+.markdown-preview-view th,
+.markdown-preview-view td {
+  padding: 4px 20px;
+  border: 1px solid var(--color-base-4);
+  color: var(--color-text-normal);
+}
+
+.markdown-preview-view thead {
+  background-color: var(--color-base-3);
+}
+
+/*--Tags--*/
+.tag:not(.token) {
+	border: none;
+  color: var(--yellow5);
+	background-color: var(--yellow0);
+	padding: auto;
+	text-align: center;
+	text-decoration: none;
+	margin: auto;
+	border-radius: 25px;
+}
+.tag:not(.token):hover {
+  border-style: solid;
+  border-width: 5px;
+	border-color: var(--yellow5);
+  color: var(--yellow5);
+	background-color: var(--yellow0) !important;
+  padding: auto;
+	text-align: center;
+	text-decoration: none;
+	margin: auto;
+	border-radius: 5px;
+  transition: 250ms;
+}
+
+/*--------Embeds--------*/
+.markdown-embed-title
+{
+  font-weight: var(--weight-semibold) !important;
+}
+.markdown-embed
+{
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+}
+
+/*----Links/Footnotes----*/
+/* Not actually footnotes, just also does 
+footnotes since I didn't include footnote 
+specific definitions */
+/* Hyperlink */
+.markdown-rendered .external-link, 
+.markdown-rendered .internal-link
+{
+	color: var(--color-blue);
+	text-decoration: underline;
+  text-decoration-color: var(--color-blue);
+}
+
+/* Hyperlink Hover */
+.markdown-rendered .external-link:hover, 
+.markdown-rendered .internal-link:hover {
+	color: var(--color-purple);
+	text-decoration: none;
+}
+
+/* Unresolved Hyperlink */ 
+.markdown-rendered .external-link.is-unresolved, 
+.markdown-rendered .internal-link.is-unresolved {
+	color: var(--color-red);
+	text-decoration: underline;
+  text-decoration-color: var(--color-red);
+}
+
+/* Unresolved Hyperlink Hover */
+.markdown-rendered .external-link.is-unresolved:hover, 
+.markdown-rendered .internal-link.is-unresolved:hover {
+	color: var(--color-orange);
+	text-decoration: underline;
+  text-decoration-color: var(--color-orange);
+}
+
+/* Graph View */
+/*color of nodes*/
+.graph-view.color-fill {
+	color: var(--color-cyan);
+}
+/*color of focused node/note*/
+.graph-view.color-fill-focused { 
+  color: var(--color-text-highlight-active-background);
+}
+/*focused node border color*/
+.graph-view.color-circle {
+	color: transparent;
+}
+/*link color*/
+.graph-view.color-line {
+	color: var(--color-base-3);
+}
+/*text color*/
+.graph-view.color-text {
+	color: var(--color-text-normal);
+}
+/*focused node color*/
+.graph-view.color-fill-highlight {
+	color: var(--color-purple);
+}
+/*focused node connections*/
+.graph-view.color-line-highlight {
+  color: var(--color-base-5);
+}
+/*Tag node color*/
+.graph-view.color-fill-tag {
+  color: var(--color-tag);
+}
+/*Attachment node color*/
+.graph-view.color-fill-attachment {
+  color: var(--color-teal);
+}
+/*Unresolved (not created yet) notes*/
+.graph-view.color-fill-unresolved {
+  color: var(--color-red);
+  opacity: 0.5;
+}
+/*arrow color*/
+.graph-view.color-arrow {
+  color: var(--color-text-faint);
+  opacity: 0.5;
+}
+/*Graph Menu*/
+.graph-controls {} 
+
+
+
+/* Cursor */
+.cm-cursorLayer .cm-cursor {
+/* border-left: ... */
+}
+
+/* animation of the blinking */
+.cm-cursorLayer {
+/* deactivate built-in animation from CodeMirror */
+animation-name: none !important; /* important needed */
+}
+
+@keyframes phase-blink {
+15% { opacity: 1 }
+50% { opacity: 0 }
+85% { opacity: 1 }
+}
+
+.cm-cursorLayer .cm-cursor {
+animation-duration: 2200ms;
+animation-name: phase-blink;
+}
+
+
+/* ----- Plugins -----*/
+/*Frontmatter/Metadata/Yaml*/
+/*Reading Mode*/
+.frontmatter-container {} 
+/*Source Mode*/
+.CodeMirror-line .cm-s-obsidian .cm-hmd-frontmatter {} 
+/*Frontmatter Tag*/
+/*Reading Mode*/
+.frontmatter-container .frontmatter-alias {} 
