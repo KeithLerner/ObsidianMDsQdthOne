@@ -1,5 +1,6 @@
 ## About
-sQdthOne is a colorful Obsidian MD theme with beatiful light and dark modes that enhance note taking experiences.
+![Sample Image](https://github.com/KeithLerner/ObsidianMDsQdthOne/blob/main/GarbledCapture.png)
+sQdthOne is a Obsidian MD theme with light and dark modes that enhance note taking experiences.
 
 ## Work in progress
 - compatibility with plugins
