@@ -1,14 +1,82 @@
+/* ----- Plugins -----*/
+/*Style Settings*/
+/* @settings
+name: sQdthOne Accents
+id: sQdthOne-theme-settings
+settings:
+  -
+    id: sQdthOne-theme-accents
+    title: Theme Modifiers
+    description: Select your preferred theme adjustment
+    type: class-select
+    allowEmpty: false
+    default: style-default
+    options:
+      -
+        label: Default
+        value: style-default
+      -
+        label: Custom
+        value: style-custom
+        description: Save your own color combination.
+      -
+        label: Colorless
+        value: style-colorless
+      -
+        label: Solar
+        value: style-solar
+      -
+        label: Ocean
+        value: style-ocean
+*/
+/* @settings */
+.theme-dark.style-custom {
+  
+}
+.theme-light.style-custom {
+  
+}
+.theme-dark.style-colorless {
+  
+}
+.theme-light.style-colorless {
+  
+}
+.theme-dark.style-ocean {
+  
+}
+.theme-light.style-ocean {
+  
+}
+/*Frontmatter/Metadata/Yaml*/
+/*Reading Mode*/
+.frontmatter-container {} 
+/*Source Mode*/
+.CodeMirror-line .cm-s-obsidian .cm-hmd-frontmatter {} 
+/*Frontmatter Tag*/
+/*Reading Mode*/
+.frontmatter-container .frontmatter-alias {} 
+
+/* Animations */
 @keyframes rainbow {
-  0% {
-    background-position-x: 0%;
-  }
-  100% {
-    background-position-x: 100%;
-  }
+  0% { background-position-x: 0% }
+  100% { background-position-x: 100% }
+}
+@keyframes phase-blink {
+  15% { opacity: 1 }
+  50% { opacity: 0 }
+  85% { opacity: 1 }
 }
 
 /* Colors and Fonts */
 :root {
+  /* Animation Timings */
+  --anim-duration-none: 0;
+  --anim-duration-superfast: 75ms;
+  --anim-duration-fast: 150ms;
+  --anim-duration-moderate: 250ms;
+  --anim-duration-slow: 500ms;
+
   /* Custom Colors */
 	--day0: rgb(250, 249, 245);  
   --day1: rgb(248, 248, 235);
@@ -113,7 +181,8 @@
 }
 
 /*Dark Theme Variables*/
-.theme-dark {
+.theme-dark,
+.theme-dark.style-default {
   /* Colors for dark Theme */
   --color-white: var(--day3);
   --color-pink: var(--pink5);
@@ -123,7 +192,7 @@
   --color-yellow: var(--yellow0);
   --color-green: var(--green2);
   --color-teal: var(--teal3);
-  --color-cyan: var(--moonstone3);
+  --color-cyan: var(--moonstone4);
   --color-blue: var(--frost3);
   --color-black: var(--night3);
   --color-base-0: var(--night0);
@@ -132,6 +201,13 @@
   --color-base-3: var(--night3);
   --color-base-4: var(--night4);
   --color-base-5: var(--night5);
+  --color-selected: var(--color-orange);
+  --color-hovered: var(--color-purple);
+  --color-stop: var(--color-red);
+  --color-caution: var(--color-yellow);
+  --color-interactable: var(--color-pink);
+  --color-alternate: var(--color-blue);
+  --color-content: var(--color-teal);
   --color-text-normal: var(--teal1);
   --color-text-muted: var(--teal3);
   --color-text-faint: var(--teal5);
@@ -148,12 +224,12 @@
   --color-text-h4: var(--frost1);
   --color-text-h5: var(--frost2);
   --color-text-h6: var(--frost3);
-  --color-horizontal-rule: var(--color-purple);
+  --color-horizontal-rule: var(--color-alternate);
   --color-list-bullets: var(--color-pink);
   --color-list-indentation-indicator: magenta;
   --color-list-indentation-indicator-hover: var(--color-pink);
-  --color-checklist-empty: var(--color-red);
-  --color-checklist-empty-border: var(--color-red);
+  --color-checklist-empty: var(--color-stop);
+  --color-checklist-empty-border: var(--color-stop);
   --color-checklist-full: var(--color-green);
   --color-checklist-full-border: var(--color-green);
   --color-tag: var(--color-yellow);
@@ -175,9 +251,12 @@
 	--background-secondary:       var(--color-base-2);
 	--background-secondary-alt:   var(--color-base-3);
   --text-selection:             var(--color-white);
+  --tab-text-color-focused-active-current: var(--color-selected);
+  --tab-text-color-active: var(--color-hovered);
 }
 
-.theme-light {
+.theme-light,
+.theme-light.style-default {
   /* Colors for light Theme */
   --color-white: var(--day2);
   --color-pink: var(--pink2);
@@ -196,6 +275,7 @@
   --color-base-3: var(--day3);
   --color-base-4: var(--day4);
   --color-base-5: var(--day5);
+  --color-selected: var(--color-orange);
   --color-text-normal: var(--night1);
   --color-text-muted: var(--night3);
   --color-text-faint: var(--night5);
@@ -212,12 +292,12 @@
   --color-text-h4: var(--frost3);
   --color-text-h5: var(--frost4);
   --color-text-h6: var(--frost5);
-  --color-horizontal-rule: var(--color-purple);
+  --color-horizontal-rule: var(--color-alternate);
   --color-list-bullets: var(--color-pink);
   --color-list-indentation-indicator: magenta;
   --color-list-indentation-indicator-hover: var(--color-pink);
-  --color-checklist-empty: var(--color-red);
-  --color-checklist-empty-border: var(--color-red);
+  --color-checklist-empty: var(--color-stop);
+  --color-checklist-empty-border: var(--color-stop);
   --color-checklist-full: var(--color-green);
   --color-checklist-full-border: var(--color-green);
   --color-tag: var(--color-yellow);
@@ -296,6 +376,20 @@ box-sizing: border-box;
   background-color: var(--color-base-3);
 }
 
+/*Toggles*/
+.checkbox-container {
+  background-color: var(--color-interactable);
+}
+.checkbox-container:hover {
+  background-color: var(--color-hovered);
+}
+.checkbox-container.is-enabled {
+  background-color: var(--color-selected);
+}
+.checkbox-container::after {
+  background-color: var(--color-base-0);
+}
+
 /*Setting Dropdown*/
 .dropdown, button:not(.clickable-icon), .dropdown option {
   color: var(--color-text-normal);
@@ -305,21 +399,27 @@ box-sizing: border-box;
 /* Setting Dropdown Hover */
 .dropdown:hover, button:not(.clickable-icon):hover{
   color: var(--color-text-highlight);
-  background-color: var(--color-green);
+  background-color: var(--color-text-italic);
+}
+
+/* Sied Pannel Buttons */
+.sidebar-toggle-button.mod-right,
+.sidebar-toggle-button.mod-left {
+  padding: 6px;
 }
 
 /* ------Community Content--- */
 .community-item .suggestion-highlight {
-  color: var(--color-red);
+  color: var(--color-stop);
 }
 
 .community-item:hover {
-  --background-modifier-border-hover: var(--color-pink);
+  --background-modifier-border-hover: var(--color-interactable);
 }
 
 .community-item.is-selected,
 .community-item.is-selected:hover {
-  --interactive-accent: var(--color-green);
+  --interactive-accent: var(--color-hovered);
 }
 
 
@@ -327,57 +427,31 @@ box-sizing: border-box;
 /*Tooltip Popup*/
 .tooltip {
   background-color: var(--color-base-3);
-  color: var(--color-text-italic);
-  border: solid 1px var(--color-green);
+  color: var(--color-interactable);
+  border: solid 1px var(--color-interactable);
 }
-.tooltip .tooltip-arrow {
-  border: transparent;
+.tooltip.mod-error {
+  background-color: var(--color-base-3);
+  color: var(--color-stop);
+  border: solid 1px var(--color-stop);
 }
-
-/*----Workspace----*/
-/* Top Bar? */
-
-/* ribbons, the thin vertical bars to the far left/right */
-.workspace-ribbon {
-  background-color: var(--color-base-2);
-}
-
-/*Side Panels*/
-.workspace-tabs {
-  background-color: var(--color-base-2);
-}
-
-/*Side Panel: Icons*/
-.workspace-tab-header-inner-icon {
+.tooltip .tooltip-arrow,
+.tooltip.mod-right .tooltip-arrow,
+.tooltip.mod-left .tooltip-arrow,
+.tooltip.mod-top .tooltip-arrow {
   background-color: transparent;
-  border-style:solid;
-  border-radius: 5px;
-  border-color: transparent;
+  color: transparent;
+  border: transparent;
+  content: " ";
 }
-
-/* Tab Close Button */
-.workspace-tab-header-inner-close-button {
+.tooltip.mod-error .tooltip-arrow,
+.tooltip.mod-error.mod-right .tooltip-arrow,
+.tooltip.mod-error.mod-left .tooltip-arrow,
+.tooltip.mod-error.mod-top .tooltip-arrow {
   background-color: transparent;
+  color: transparent;
   border: transparent;
-  border-radius: 10px;
-  border-width: 1px;
-}
-
-/* Tab Close Button On Hover */
-.workspace-tab-header-inner-close-button:hover,
-.workspace-tab-header-inner-close-button:hover svg {
-  color: var(--color-text-highlight);
-  border: transparent;
-  background-color: var(--color-red);
-  background-clip: border-box;
-  border-radius: 10px;
-  transition: 250ms;
-}
-
-/*Active Tab Header*/
-.workspace-tab-header.is-active,
-.workspace-tab-header.is-focused {
-  color: var(--color-orange);
+  content: " ";
 }
 
 /*--File Explorer--*/
@@ -412,7 +486,7 @@ box-sizing: border-box;
 /* Active file/folder */
 .nav-file-title.is-active,
 .nav-folder-title.is-active {
-  color: var(--color-orange);
+  color: var(--color-selected);
   background-color: var(--color-base-1);
 }
 
@@ -426,10 +500,10 @@ box-sizing: border-box;
 :not(.is-grabbing) .nav-file-title:hover,
 :not(.is-grabbing) .nav-folder-title:hover,
 .tree-item-self.is-clickable:hover {
-  background-image: none;
+  background-image: linear-gradient(var(--color-base-0), var(--color-base-0));
   background-color: var(--color-base-2);
   background-size: 1000% 100%;
-  -webkit-text-fill-color: var(--color-purple);
+  -webkit-text-fill-color: var(--color-hovered);
   transition: 250ms;
 }
 
@@ -437,7 +511,7 @@ box-sizing: border-box;
 .nav-file-tag,
 .nav-file-tag:hover {
   background-color: transparent;
-  color: var(--color-teal);
+  color: var(--color-content);
   font-weight: var(--weight-extrabold);
 }
 
@@ -493,105 +567,159 @@ box-sizing: border-box;
   background-color: var(--color-base-3);
 }
 
-/*Navigation Button - Back */
-.mod-back {
-  color: var(--color-text-normal);
-  background-color: var(--color-base-3);
-  border-style:solid;
-  border-radius: 5px;
-  border-color: transparent;
-}
-
-/*Navigation Button - Forward*/
-.mod-forward {
-  color: var(--color-text-normal);
-  background-color: var(--color-base-3);
-  border-style:solid;
-  border-radius: 5px;
-  border-color: transparent;
-}
-
-/*Window Control- Minimize*/
-.mod-minimize {
-  border-style:solid;
-  border-radius: 7px;
-  border-width: 1px;
-  border-color: transparent;
-}
-
-/*Window Control- Minimize*/
-.mod-maximize {
-  border-style:solid;
-  border-radius: 7.5px;
-  border-width: 1px;
-  border-color: transparent;
-}
-
-/*Window Control- Close*/
-.mod-close {
-  border-style:solid;
-  border-radius: 7px;
-  border-width: 1px;
-  border-color: transparent;
-}
-
-/*Window Control- Minimize Hover*/
-.mod-minimize:hover {
-  background-color: var(--color-green);
-  color: var(--color-text-highlight);
-  border-style:solid;
-  border-radius: 7px;
-  border-width: 1px;
-  border-color: transparent;
-}
-
-/*Window Control- Minimize Hover*/
-.mod-maximize:hover {
-  background-color: var(--color-yellow);
-  color: var(--color-text-highlight);
-  border-style:solid;
-  border-radius: 7px;
-  border-width: 1px;
-  border-color: transparent;
-}
-
-/*Window Control- Close Hover*/
-.mod-close:hover {
-  background-color: var(--color-red);
-  color: var(--color-text-highlight);
-  border-style:solid;
-  border-radius: 7px;
-  border-width: 1px;
-  border-color: transparent;
-}
-
-/*Buttons*/
+/*---Buttons---*/
 /*Default Buttons*/
-button {
+button, 
+.clickable-icon {
+  color: var(--color-interactable);
   border-style:solid;
   border-radius: 5px;
   border-color: transparent;
+  padding: 3px;
+}
+
+/*Default Buttons Hover*/
+button:hover,
+.clickable-icon:hover {
+  background-color: var(--color-base-0);
+  color: var(--color-hovered);
+  border-style: solid;
+  border-radius: 5px;
+  border-color: transparent;
+  box-shadow: none;
+  padding: 3px;
+}
+
+/*Ribbon Buttons*/
+.side-dock-ribon-action, 
+.mod-right-split .workspace-tab-header .workspace-tab-header-inner-icon,
+.mod-left-split .workspace-tab-header .workspace-tab-header-inner-icon {
+  color: var(--color-interactable);
+  border-style:solid;
+  border-radius: 5px;
+  border-color: transparent;
+  padding: 3px;
+}
+
+/*Ribbon Buttons Hover*/
+.side-dock-ribon-action:hover,
+.mod-right-split .workspace-tab-header .workspace-tab-header-inner-icon:hover,
+.mod-left-split .workspace-tab-header .workspace-tab-header-inner-icon:hover {
+  color: var(--color-hovered);
+  border-style:solid;
+  border-radius: 5px;
+  border-color: transparent;
+  padding: 3px;
+}
+
+/*Ribbon Buttons Active/Focused*/
+.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.mod-left-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+  color: var(--color-selected);
+  border-style:solid;
+  border-radius: 5px;
+  border-color: transparent;
+  padding: 3px;
+}
+
+/*Tab Header Buttons*/
+.workspace-tab-header-container
+.clickable-icon {
+  color: var(--color-interactable);
+  border-style:solid;
+  border-radius: 5px;
+  border-color: transparent;
+  padding: 3px;
+}
+
+/*Tab Header Buttons on Hover*/
+.workspace-tab-header-container
+.clickable-icon:hover {
+  color: var(--color-hovered);
+  border-style:solid;
+  border-radius: 5px;
+  border-color: transparent;
+  padding: 3px;
+}
+
+/* Tab Close Button */
+.workspace-tab-header-inner-close-button,
+.workspace-tab-header-inner-close-button svg {
+  background-color: transparent;
+  color: var(--color-interactable);
+  border: transparent;
+  border-radius: 10px;
+  border-width: 1px;
+}
+
+/* Tab Close Button On Hover */
+.workspace-tab-header-inner-close-button:hover,
+.workspace-tab-header-inner-close-button:hover svg {
+  color: var(--color-text-highlight);
+  border: transparent;
+  background-color: var(--color-stop);
+  background-clip: border-box;
+  border-radius: 10px;
+  transition: 250ms;
+}
+
+/*Graph Settings Reset Button*/
+.graph-controls:not(.is-close) .graph-controls-button.mod-reset {
+  background-color: transparent;
+  color: var(--color-interactable);
+  border: transparent;
+}
+
+/*Graph Settings Reset Button on Hover*/
+.graph-controls:not(.is-close) .graph-controls-button.mod-reset:hover {
+  background-color: var(--color-base-0);
+  color: var(--color-hovered);
+  border: transparent;
+}
+
+/*Graph Settings Close Button*/
+.graph-controls-button.mod-close {
+  background-color: transparent;
+  color: var(--color-interactable);
+  border: transparent;
+  border-radius: 10px;
+  border-width: 1px;
+}
+
+/*Graph Settings Close Button On Hover*/
+.graph-controls-button.mod-close:hover,
+.graph-controls-button.mod-close:hover svg {
+  color: var(--color-text-highlight);
+  border: transparent;
+  background-color: var(--color-stop);
+  background-clip: border-box;
+  border-radius: 25px;
+  transition: 250ms;
+}
+
+/*Graph Settings Close Button*/
+.modal-close-button {
+  background-color: transparent;
+  color: var(--color-interactable);
+  border: transparent;
+  border-radius: 10px;
+  border-width: 1px;
+}
+
+/*Graph Settings Close Button On Hover*/
+.modal-close-button:hover,
+.modal-close-button:hover svg {
+  color: var(--color-text-highlight);
+  border: transparent;
+  background-color: var(--color-stop);
+  background-clip: border-box;
+  border-radius: 25px;
+  transition: 250ms;
 }
 
 /*Settings Buttons*/
 button.mod-cta {
-  border-style:solid;
-  border-radius: 5px;
-  border-color: transparent;
-}
-
-/*Warning Buttons*/
-button.mod-warning {
-  border-style:solid;
-  border-radius: 5px;
-  border-color: transparent;
-}
-
-/*Default Buttons Hover*/
-button:hover {
-  background-color: var(--color-white);
-  color: var(--color-text-bold);
-  font-weight: var(--weight-extrabold);
+  color: var(--color-interactable);
   border-style:solid;
   border-radius: 5px;
   border-color: transparent;
@@ -599,9 +727,17 @@ button:hover {
 
 /*Settings Buttons Hover*/
 button.mod-cta:hover {
-  background-color: var(--color-white);
-  color: var(--color-text-bold);
-  font-weight: var(--weight-extrabold);
+  background-color: var(--color-base-0);
+  color: var(--color-hovered);
+  border-style: solid;
+  border-radius: 5px;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/*Warning Buttons*/
+button.mod-warning {
+  color: var(--color-caution);
   border-style:solid;
   border-radius: 5px;
   border-color: transparent;
@@ -609,43 +745,127 @@ button.mod-cta:hover {
 
 /*Warning Buttons Hover*/
 button.mod-warning:hover {
-  background-color: var(--color-white);
+  background-color: var(--color-caution);
   color: var(--color-text-bold);
-  font-weight: var(--weight-extrabold);
-  border-style:solid;
+  border-style: solid;
   border-radius: 5px;
   border-color: transparent;
 }
 
-/*--Workspace: Notes--*/
+/*Window Control- Minimize*/
+.mod-minimize {
+  color: var(--color-interactable);
+  border-style:solid;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+/*Window Control- Minimize Hover*/
+.mod-minimize:hover {
+  background-color: var(--color-text-italic);
+  color: var(--color-text-highlight);
+  border-style:solid;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+/*Window Control- Maximize*/
+.mod-maximize {
+  color: var(--color-interactable);
+  border-style:solid;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+/*Window Control- Maximize Hover*/
+.mod-maximize:hover {
+  background-color: var(--color-caution);
+  color: var(--color-text-highlight);
+  border-style:solid;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+/*Window Control- Close*/
+.mod-close {
+  color: var(--color-interactable);
+  border-style:solid;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+/*Window Control- Close Hover*/
+.mod-close:hover {
+  background-color: var(--color-stop);
+  color: var(--color-text-highlight);
+  border-style:solid;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+/*----Workspace----*/
 /*Note Title Bar*/
 .workspace-leaf .view-header {
   background-color: var(--color-base-1);
 }
 
 /*Breadcrumbs*/
-.view-header-title-container {}
+.view-header-title-container,
+.view-header-title {}
 
-/*Inactive? Note Titlebar*/
-/*Note Title Bar: Text*/
-.view-header-title {
-  color: var(--color-text-faint);
+/* Ribbons */
+.workspace-ribbon {
+  background-color: var(--color-base-2);
 }
 
-/*Active Note Titlebar*/
-/*Note Title Bar: Text*/
-.workspace-leaf.mod-active .view-header-title {
-  color: var(--color-yellow);
+/*Side Panels*/
+.workspace-tabs {
+  background-color: var(--color-base-2);
 }
 
-/*Note Title Bar: Note Icon*/
-.workspace-leaf.mod-active .view-header-icon {
+/*Side Panel: Icons*/
+.workspace-tab-header-inner-icon {
   background-color: transparent;
-  color: var(--color-text-faint);
+  border-style:solid;
+  border-radius: 5px;
+  border-color: transparent;
 }
 
-/*Note Title Bar: Settings Icons*/
-.workspace-leaf.mod-active .view-action {
+/* Tab Background On Hover */
+.workspace-tab-header:not(.is-active):hover 
+.workspace-tab-header-inner {
+  background-color: var(--color-base-0);
+}
+
+/*Tab Header Hover*/
+.workspace-tab-header:not(.is-active):hover
+.workspace-tab-header-inner-title,
+.mod-active .workspace-tab-header:not(.is-active):hover
+.workspace-tab-header-inner-title {
+  color: var(--color-hovered);
+}
+
+/*Focused Active Tab Header Title*/
+.is-focused .mod-active .workspace-tab-header
+.is-active .workspace-tab-header-inner-title {
+  color: var(--color-selected);
+}
+
+/*Focused Inactive Tab Header*/
+.is-focused .mod-active .workspace-tab-header
+.workspace-tab-header-inner-title {
+  color: var(--color-text-normal);
+}
+
+/*Unfocused Inactive Tab Header*/
+:not(.is-focused) .mod-active .workspace-tab-header
+.workspace-tab-header-inner-title {
   color: var(--color-text-faint);
 }
 
@@ -686,7 +906,7 @@ em {
 .cm-s-obsidian span.cm-formatting-highlight em,
 .cm-s-obsidian span.cm-highlight.cm-em,
 .cm-s-obsidian span.cm-highlight em {
-  background-color: var(--color-green);
+  background-color: var(--color-text-italic);
   color: var(--text-on-accent);
   text-align: left;
 }
@@ -814,10 +1034,10 @@ body {
   --text-highlight-bg-active: var(--color-text-highlight-active-background); /*Active Search Match (Preview Mode)*/
   --scrollbar-active-thumb-bg: var(--color-text-bold); /*Scrollbar Dragged Color*/
   --interactive-normal: var(--color-base-3); /*Button Color*/
-  --interactive-hover: var(--color-yellow); /*Button Hovered Color*/
+  --interactive-hover: var(--color-hovered); /*Button Hovered Color*/
   --interactive-accent: var(--text-accent); /*Workspace Note Title Underline*/
-  --interactive-accent-hover: var(--color-yellow); /*Menu Button Hover*/
-  --slider-track-background:var(--color-cyan); /*Settings Slider Backgrounds*/
+  --interactive-accent-hover: var(--color-hovered); /*Menu Button Hover*/
+  --slider-track-background:var(--color-interactable); /*Settings Slider Backgrounds*/
 }
 
 /*--Horizontal Line--*/
@@ -830,12 +1050,7 @@ hr {
   color: var(--color-horizontal-rule);
 } 
 /*Source Mode*/
-.HyperMD-hr-bg {
-  color: var(--color-horizontal-rule);
-} 
-
-/*HR Line Text*/
-/*Source Mode*/
+.HyperMD-hr-bg,
 .cm-s-obsidian pre.HyperMD-hr {
   color: var(--color-horizontal-rule);
 } 
@@ -918,7 +1133,7 @@ hr {
 /* Check Lists */
 input.task-list-item-checkbox {
   border-style: solid;
-  border-color: var(--color-pink);
+  border-color: var(--color-interactable);
   border-width: 1px;
   border-radius: 5px;
   background-color: transparent;
@@ -926,7 +1141,7 @@ input.task-list-item-checkbox {
 }
 input.task-list-item-checkbox:hover {
   border-style: solid;
-  border-color: var(--color-purple);
+  border-color: var(--color-hovered);
   border-width: 5px;
   border-radius: 100%;
   background-color: transparent;
@@ -934,7 +1149,7 @@ input.task-list-item-checkbox:hover {
 }
 input.task-list-item-checkbox:checked:hover {
   border-style: double;
-  border-color: var(--color-purple);
+  border-color: var(--color-hovered);
   border-width: 9px;
   border-radius: 100%;
   background-color: transparent;
@@ -942,7 +1157,7 @@ input.task-list-item-checkbox:checked:hover {
 }
 input.task-list-item-checkbox:checked {
   border-style: double;
-  border-color: var(--color-orange);
+  border-color: var(--color-selected);
   border-width: 9px;
   border-radius: 5px;
   background-color: transparent;
@@ -952,22 +1167,25 @@ input.task-list-item-checkbox:checked {
 
 /*--Blockquotes--*/
 /* Read view */
-.markdown-rendered blockquote {
+.markdown-rendered blockquote,
+.markdown-preview-view blockquote {
   font-weight: var(--weight-extralight);
-  color: var(--color-pink);
+  color: var(--color-caution);
   background-color: var(--color-base-2);
-  border-color: var(--color-pink);
+  border-color: var(--color-caution);
   border-radius: 5px;
   border-width: 5px;
+}
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before, 
+.markdown-source-view.mod-cm6 .cm-blockquote-border:before {
+  color: var(--color-caution);
+  border-left: var(--blockquote-border-thickness) solid var(--color-caution);
 }
 /* Edit view */
 .cm-s-obsidian span.cm-quote {
   font-weight: var(--weight-extralight);
-  color: var(--color-pink);
+  color: var(--color-caution);
   background-color: transparent;
-  border-color: var(--color-pink);
-  border-radius: 5px;
-  border-width: 5px;
 }
 
 /*--Tables--*/
@@ -991,6 +1209,7 @@ thead {
 }
 
 /*--Tags--*/
+/*Reading*/
 a.tag,
 .tag {
 	border: none;
@@ -1017,6 +1236,65 @@ a.tag:hover,
 	border-radius: 5px;
   transition: 250ms;
 }
+/*Live Preview + Source*/
+.cm-s-obsidian span.cm-hashtag-begin {
+  border: none;
+  color: var(--yellow5);
+	background-color: var(--yellow0);
+	padding: auto;
+	text-align: center;
+	text-decoration: none;
+	margin: auto;
+  border-top-left-radius: 25px ;
+	border-bottom-left-radius: 25px ;
+  transition: 250ms;
+}
+.cm-s-obsidian span.cm-hashtag-begin:hover {
+  border-style: solid;
+  border-width: 0px;
+  border-top-width: 5px;
+  border-left-width: 5px;
+  border-bottom-width: 5px;
+	border-color: var(--yellow5);
+  color: var(--yellow5);
+	background-color: var(--yellow0) !important;
+  padding: auto;
+	text-align: center;
+	text-decoration: none;
+	margin: auto;
+  border-top-left-radius: 5px ;
+	border-bottom-left-radius: 5px ;
+  transition: 250ms;
+}
+.cm-s-obsidian span.cm-hashtag-end {
+  border: none;
+  color: var(--yellow5);
+	background-color: var(--yellow0);
+	padding: auto;
+	text-align: center;
+	text-decoration: none;
+	margin: auto;
+  border-top-right-radius: 25px ;
+	border-bottom-right-radius: 25px ;
+  transition: 250ms;
+}
+.cm-s-obsidian span.cm-hashtag-end:hover {
+  border-style: solid;
+  border-width: 0px;
+  border-top-width: 5px;
+  border-right-width: 5px;
+  border-bottom-width: 5px;
+	border-color: var(--yellow5);
+  color: var(--yellow5);
+	background-color: var(--yellow0) !important;
+  padding: auto;
+	text-align: center;
+	text-decoration: none;
+	margin: auto;
+  border-top-right-radius: 5px ;
+	border-bottom-right-radius: 5px ;
+  transition: 250ms;
+}
 
 /*--------Embeds--------*/
 .markdown-embed-title
@@ -1039,32 +1317,33 @@ specific definitions */
 .markdown-rendered .external-link, 
 .markdown-rendered .internal-link
 {
-	color: var(--color-blue);
+	color: var(--color-alternate);
 	text-decoration: underline;
-  text-decoration-color: var(--color-blue);
+  text-decoration-color: var(--color-alternate);
 }
 
 /* Hyperlink Hover */
 .markdown-rendered .external-link:hover, 
 .markdown-rendered .internal-link:hover {
-	color: var(--color-purple);
-	text-decoration: none;
+	color: var(--color-hovered);
+	text-decoration: underline;
+  text-decoration-color: var(--color-hovered);
 }
 
 /* Unresolved Hyperlink */ 
 .markdown-rendered .external-link.is-unresolved, 
 .markdown-rendered .internal-link.is-unresolved {
-	color: var(--color-red);
+	color: var(--color-stop);
 	text-decoration: underline;
-  text-decoration-color: var(--color-red);
+  text-decoration-color: var(--color-stop);
 }
 
 /* Unresolved Hyperlink Hover */
 .markdown-rendered .external-link.is-unresolved:hover, 
 .markdown-rendered .internal-link.is-unresolved:hover {
-	color: var(--color-orange);
+	color: var(--color-hovered);
 	text-decoration: underline;
-  text-decoration-color: var(--color-orange);
+  text-decoration-color: var(--color-stop);
 }
 
 /* Graph View */
@@ -1090,7 +1369,7 @@ specific definitions */
 }
 /*focused node color*/
 .graph-view.color-fill-highlight {
-	color: var(--color-purple);
+	color: var(--color-hovered);
 }
 /*focused node connections*/
 .graph-view.color-line-highlight {
@@ -1102,11 +1381,11 @@ specific definitions */
 }
 /*Attachment node color*/
 .graph-view.color-fill-attachment {
-  color: var(--color-teal);
+  color: var(--color-content);
 }
 /*Unresolved (not created yet) notes*/
 .graph-view.color-fill-unresolved {
-  color: var(--color-red);
+  color: var(--color-stop);
   opacity: 0.5;
 }
 /*arrow color*/
@@ -1130,24 +1409,7 @@ specific definitions */
 animation-name: none !important; /* important needed */
 }
 
-@keyframes phase-blink {
-15% { opacity: 1 }
-50% { opacity: 0 }
-85% { opacity: 1 }
-}
-
 .cm-cursorLayer .cm-cursor {
 animation-duration: 2200ms;
 animation-name: phase-blink;
 }
-
-
-/* ----- Plugins -----*/
-/*Frontmatter/Metadata/Yaml*/
-/*Reading Mode*/
-.frontmatter-container {} 
-/*Source Mode*/
-.CodeMirror-line .cm-s-obsidian .cm-hmd-frontmatter {} 
-/*Frontmatter Tag*/
-/*Reading Mode*/
-.frontmatter-container .frontmatter-alias {} 
