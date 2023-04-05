@@ -25,29 +25,9 @@ settings:
       -
         label: Solar
         value: style-solar
-      -
-        label: Ocean
-        value: style-ocean
 */
 /* @settings */
-.theme-dark.style-custom {
-  
-}
-.theme-light.style-custom {
-  
-}
-.theme-dark.style-colorless {
-  
-}
-.theme-light.style-colorless {
-  
-}
-.theme-dark.style-ocean {
-  
-}
-.theme-light.style-ocean {
-  
-}
+
 /*Frontmatter/Metadata/Yaml*/
 /*Reading Mode*/
 .frontmatter-container {} 
@@ -205,9 +185,10 @@ settings:
   --color-hovered: var(--color-purple);
   --color-stop: var(--color-red);
   --color-caution: var(--color-yellow);
-  --color-interactable: var(--color-pink);
-  --color-alternate: var(--color-blue);
+  --color-interactable: var(--color-blue);
+  --color-alternate: var(--color-pink);
   --color-content: var(--color-teal);
+  --color-confirmed: var(--color-green);
   --color-text-normal: var(--teal1);
   --color-text-muted: var(--teal3);
   --color-text-faint: var(--teal5);
@@ -276,6 +257,13 @@ settings:
   --color-base-4: var(--day4);
   --color-base-5: var(--day5);
   --color-selected: var(--color-orange);
+  --color-hovered: var(--color-purple);
+  --color-stop: var(--color-red);
+  --color-caution: var(--color-yellow);
+  --color-interactable: var(--color-blue);
+  --color-alternate: var(--color-pink);
+  --color-content: var(--color-teal);
+  --color-confirmed: var(--color-green);
   --color-text-normal: var(--night1);
   --color-text-muted: var(--night3);
   --color-text-faint: var(--night5);
@@ -319,6 +307,26 @@ settings:
 	--background-secondary:       var(--color-base-2);
 	--background-secondary-alt:   var(--color-base-3);
   --text-selection:             var(--color-yellow);
+}
+
+.theme-dark.style-custom {
+  
+}
+.theme-light.style-custom {
+  
+}
+.theme-dark.style-colorless {
+  
+}
+.theme-light.style-colorless {
+  
+}
+.theme-dark.style-solar {
+
+}
+
+.theme-light.style-solar {
+
 }
 
 /*Box Sizing Reset - this makes it easier to set any ::before and ::after pseudo-elements' dimensions,
@@ -376,6 +384,10 @@ box-sizing: border-box;
   background-color: var(--color-base-3);
 }
 
+.mod-warning {
+  font-weight: var(--weight-maxbold);
+}
+
 /*Toggles*/
 .checkbox-container {
   background-color: var(--color-interactable);
@@ -384,28 +396,32 @@ box-sizing: border-box;
   background-color: var(--color-hovered);
 }
 .checkbox-container.is-enabled {
-  background-color: var(--color-selected);
+  background-color: var(--color-confirmed);
 }
 .checkbox-container::after {
-  background-color: var(--color-base-0);
+  background-color: var(--color-base-1);
 }
 
-/*Setting Dropdown*/
-.dropdown, button:not(.clickable-icon), .dropdown option {
-  color: var(--color-text-normal);
+/*Dropdown*/
+.dropdown, .dropdown option {
+  color: var(--color-interactable);
   background-color: var(--color-base-3);
 }
 
-/* Setting Dropdown Hover */
+/*Dropdown Hover*/
 .dropdown:hover, button:not(.clickable-icon):hover{
   color: var(--color-text-highlight);
-  background-color: var(--color-text-italic);
+  background-color: var(--color-hovered);
 }
 
-/* Sied Pannel Buttons */
-.sidebar-toggle-button.mod-right,
-.sidebar-toggle-button.mod-left {
-  padding: 6px;
+/*Sliders*/
+input[type='range'] {
+  width: 100px;
+  -webkit-appearance: none;
+  background-color: var(--color-alternate);
+  border-radius: 3px;
+  height: 3px;
+  padding: 0;
 }
 
 /* ------Community Content--- */
@@ -590,11 +606,17 @@ button:hover,
   padding: 3px;
 }
 
+/* Sied Pannel Expand/CollapseButtons */
+.sidebar-toggle-button.mod-right,
+.sidebar-toggle-button.mod-left {
+  padding: 6px;
+}
+
 /*Ribbon Buttons*/
 .side-dock-ribon-action, 
 .mod-right-split .workspace-tab-header .workspace-tab-header-inner-icon,
 .mod-left-split .workspace-tab-header .workspace-tab-header-inner-icon {
-  color: var(--color-interactable);
+  color: var(--color-alternate);
   border-style:solid;
   border-radius: 5px;
   border-color: transparent;
@@ -718,16 +740,42 @@ button:hover,
 }
 
 /*Settings Buttons*/
-button.mod-cta {
+button.mod-cta, 
+button:not(.clickable-icon) {
+  background-color: var(--color-base-3);
   color: var(--color-interactable);
   border-style:solid;
   border-radius: 5px;
   border-color: transparent;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 /*Settings Buttons Hover*/
-button.mod-cta:hover {
-  background-color: var(--color-base-0);
+button.mod-cta:hover,
+button:not(.clickable-icon):hover {
+  background-color: var(--color-alternate);
+  color: var(--color-text-highlight);
+  border-style: solid;
+  border-radius: 5px;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/*Secondary Settings Buttons*/
+.setting-item-control .clickable-icon {
+  background-color: transparent;
+  color: var(--color-interactable);
+  border-style:solid;
+  border-radius: 5px;
+  border-color: transparent;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/*Secondary Settings Buttons Hover*/
+.setting-item-control .clickable-icon:hover {
+  background-color: var(--color-base-2);
   color: var(--color-hovered);
   border-style: solid;
   border-radius: 5px;
@@ -815,9 +863,23 @@ button.mod-warning:hover {
   background-color: var(--color-base-1);
 }
 
-/*Breadcrumbs*/
-.view-header-title-container,
-.view-header-title {}
+/*Breadcrumb File Name*/
+.view-header-title {
+  color: var(--color-selected);
+  font-size: 0;
+}
+
+/*Breadcrumb Parent Name*/
+.view-header-title-parent {
+  color: var(--text-faint);
+  font-size: 0;
+}
+
+/*Breadcrumb Seperator*/
+.view-header-breadcrumb-separator {
+  color: var(--color-content);
+  font-size: 0;
+}
 
 /* Ribbons */
 .workspace-ribbon {
@@ -960,6 +1022,7 @@ del {
     9px 9px rgba(0,0,0,0.05)
 }
 
+/*Hide Title in Edit Mode*/
 .cm-editor .inline-title {
   font-size: 0;
 }
@@ -1032,7 +1095,7 @@ body {
   --text-faint: var(--color-text-faint); /*Link brackets color & Gutter Numbers*/
   --text-highlight-bg: var(--color-text-highlight-background); /*Search Matches*/
   --text-highlight-bg-active: var(--color-text-highlight-active-background); /*Active Search Match (Preview Mode)*/
-  --scrollbar-active-thumb-bg: var(--color-text-bold); /*Scrollbar Dragged Color*/
+  --scrollbar-active-thumb-bg: var(--color-hovered); /*Scrollbar Dragged Color*/
   --interactive-normal: var(--color-base-3); /*Button Color*/
   --interactive-hover: var(--color-hovered); /*Button Hovered Color*/
   --interactive-accent: var(--text-accent); /*Workspace Note Title Underline*/
@@ -1133,7 +1196,7 @@ hr {
 /* Check Lists */
 input.task-list-item-checkbox {
   border-style: solid;
-  border-color: var(--color-interactable);
+  border-color: var(--color-alternate);
   border-width: 1px;
   border-radius: 5px;
   background-color: transparent;
@@ -1157,7 +1220,7 @@ input.task-list-item-checkbox:checked:hover {
 }
 input.task-list-item-checkbox:checked {
   border-style: double;
-  border-color: var(--color-selected);
+  border-color: var(--color-confirmed);
   border-width: 9px;
   border-radius: 5px;
   background-color: transparent;
