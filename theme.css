@@ -1,42 +1,3 @@
-/* ----- Plugins -----*/
-/*Style Settings*/
-/* @settings
-name: sQdthOne Accents
-id: sQdthOne-theme-settings
-settings:
-  -
-    id: sQdthOne-theme-accents
-    title: Theme Modifiers
-    description: Select your preferred theme adjustment
-    type: class-select
-    allowEmpty: false
-    default: style-default
-    options:
-      -
-        label: Default
-        value: style-default
-      -
-        label: Custom
-        value: style-custom
-        description: Save your own color combination.
-      -
-        label: Colorless
-        value: style-colorless
-      -
-        label: Solar
-        value: style-solar
-*/
-/* @settings */
-
-/*Frontmatter/Metadata/Yaml*/
-/*Reading Mode*/
-.frontmatter-container {} 
-/*Source Mode*/
-.CodeMirror-line .cm-s-obsidian .cm-hmd-frontmatter {} 
-/*Frontmatter Tag*/
-/*Reading Mode*/
-.frontmatter-container .frontmatter-alias {} 
-
 /* Animations */
 @keyframes rainbow {
   0% { background-position-x: 0% }
@@ -234,6 +195,8 @@ settings:
   --text-selection:             var(--color-white);
   --tab-text-color-focused-active-current: var(--color-selected);
   --tab-text-color-active: var(--color-hovered);
+  --titlebar-background:        var(--color-base-3);
+  --titlebar-background-focused:var(--color-base-2);
 }
 
 .theme-light,
@@ -307,6 +270,10 @@ settings:
 	--background-secondary:       var(--color-base-2);
 	--background-secondary-alt:   var(--color-base-3);
   --text-selection:             var(--color-yellow);
+  --tab-text-color-focused-active-current: var(--color-selected);
+  --tab-text-color-active: var(--color-hovered);
+  --titlebar-background:        var(--color-base-3);
+  --titlebar-background-focused:var(--color-base-2);
 }
 
 .theme-dark.style-custom {
@@ -597,7 +564,7 @@ button,
 /*Default Buttons Hover*/
 button:hover,
 .clickable-icon:hover {
-  background-color: var(--color-base-0);
+  background-color: var(--color-base-1);
   color: var(--color-hovered);
   border-style: solid;
   border-radius: 5px;
@@ -637,7 +604,7 @@ button:hover,
 /*Ribbon Buttons Active/Focused*/
 .mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
 .mod-left-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
-  color: var(--color-selected);
+  color: var(--color-selected) !important;
   border-style:solid;
   border-radius: 5px;
   border-color: transparent;
@@ -694,7 +661,7 @@ button:hover,
 
 /*Graph Settings Reset Button on Hover*/
 .graph-controls:not(.is-close) .graph-controls-button.mod-reset:hover {
-  background-color: var(--color-base-0);
+  background-color: var(--color-base-1);
   color: var(--color-hovered);
   border: transparent;
 }
@@ -858,6 +825,9 @@ button.mod-warning:hover {
 }
 
 /*----Workspace----*/
+.workspace-tab-header-inner {
+  padding: 0 0;
+}
 /*Note Title Bar*/
 .workspace-leaf .view-header {
   background-color: var(--color-base-1);
@@ -916,7 +886,7 @@ button.mod-warning:hover {
 /*Focused Active Tab Header Title*/
 .is-focused .mod-active .workspace-tab-header
 .is-active .workspace-tab-header-inner-title {
-  color: var(--color-selected);
+  color: var(--color-selected) !important;
 }
 
 /*Focused Inactive Tab Header*/
@@ -1023,12 +993,17 @@ del {
 }
 
 /*Hide Title in Edit Mode*/
+title, 
 .cm-editor .inline-title {
   font-size: 0;
 }
 
+h1,
+.markdown-rendered h1,
+.HyperMD-header-1,
+.HyperMD-list-line .cm-header-1,
 .cm-header-1.cm-header-1,
-.markdown-preview-section.markdown-preview-section h1 {
+.markdown-preview-section h1 {
 	color: var(--color-text-h1);
 	font-size: var(--size-text-h1);
 	font-family: var(--font-headings);
@@ -1044,6 +1019,10 @@ del {
     9px 9px rgba(0,0,0,0.05)
 }
 
+h2,
+.markdown-rendered h2,
+.HyperMD-header-2,
+.HyperMD-list-line .cm-header-2,
 .cm-header-2,
 .markdown-preview-section h2 {
 	color: var(--color-text-h2);
@@ -1051,6 +1030,10 @@ del {
 	font-family: var(--font-headings);
 }
 
+h3,
+.markdown-rendered h3,
+.HyperMD-header-3,
+.HyperMD-list-line .cm-header-3,
 .cm-header-3,
 .markdown-preview-section h3 {
 	color: var(--color-text-h3);
@@ -1058,6 +1041,10 @@ del {
 	font-family: var(--font-headings);
 }
 
+h4,
+.markdown-rendered h4,
+.HyperMD-header-4,
+.HyperMD-list-line .cm-header-4,
 .cm-header-4,
 .markdown-preview-section h4 {
 	color: var(--color-text-h4);
@@ -1065,6 +1052,10 @@ del {
 	font-family: var(--font-headings);
 }
 
+h5,
+.markdown-rendered h5,
+.HyperMD-header-5,
+.HyperMD-list-line .cm-header-5,
 .cm-header-5,
 .markdown-preview-section h5 {
 	color: var(--color-text-h5);
@@ -1072,6 +1063,10 @@ del {
 	font-family: var(--font-headings);
 }
 
+h6,
+.markdown-rendered h6,
+.HyperMD-header-6,
+.HyperMD-list-line .cm-header-6,
 .cm-header-6,
 .markdown-preview-section h6 {
 	color: var(--color-text-h6);
@@ -1225,6 +1220,9 @@ input.task-list-item-checkbox:checked {
   border-radius: 5px;
   background-color: transparent;
   transition: 250ms;
+}
+input.task-list-item-checkbox::after {
+  background-color: transparent !important;
 }
 
 
@@ -1459,9 +1457,7 @@ specific definitions */
 /*Graph Menu*/
 .graph-controls {} 
 
-
-
-/* Cursor */
+/*-----Cursor----*/
 .cm-cursorLayer .cm-cursor {
 /* border-left: ... */
 }
@@ -1471,8 +1467,181 @@ specific definitions */
 /* deactivate built-in animation from CodeMirror */
 animation-name: none !important; /* important needed */
 }
-
 .cm-cursorLayer .cm-cursor {
 animation-duration: 2200ms;
 animation-name: phase-blink;
+}
+
+/* ----- Plugins -----*/
+/*--Style Settings--*/
+/* @settings
+name: sQdthOne Accents
+id: sQdthOne-theme-settings
+settings:
+  -
+    id: sQdthOne-theme-accents
+    title: Theme Modifiers
+    description: Select your preferred theme adjustment
+    type: class-select
+    allowEmpty: false
+    default: style-default
+    options:
+      -
+        label: Default
+        value: style-default
+      -
+        label: Custom
+        value: style-custom
+        description: Save your own color combination.
+      -
+        label: Colorless
+        value: style-colorless
+      -
+        label: Solar
+        value: style-solar
+*/
+/* @settings */
+
+/*--Frontmatter/Metadata/Yaml--*/
+/*Reading Mode*/
+.frontmatter-container {} 
+/*Source Mode*/
+.CodeMirror-line .cm-s-obsidian .cm-hmd-frontmatter {} 
+/*Frontmatter Tag*/
+/*Reading Mode*/
+.frontmatter-container .frontmatter-alias {} 
+
+/*--Calendar--*/
+/*Vertical Cell Outlines */
+#calendar-container td {
+	width: 12.5%;
+	border: none;
+	padding: 0px 0px 0px 0px !important;
+	line-height: 22px;
+}
+
+/*Horizontal Cell Outlines */
+#calendar-container tr {
+	width: 12.5%;
+  border: none;
+	padding: 0px 0px 0px 0px !important;
+	line-height: 22px;
+}
+
+/*Vertical Margin Adjust*/
+#calendar-container .calendar{
+	margin: -6px 0;
+}
+
+/*Today Button*/
+#calendar-container .reset-button {
+	font-size: 20px !important;
+	padding: auto;
+	line-height: 1;
+	text-align: center;
+	color: var(--color-interactable);
+}
+
+/*Today Button Hover*/
+#calendar-container .reset-button:hover {
+  font-weight: var(--weight-maxbold);
+	background-image: repeating-linear-gradient(90deg, 
+  var(--color-pink) 5%, var(--color-red) 15%, var(--color-orange) 25%, 
+  var(--color-yellow) 35%, var(--color-green) 45%, var(--color-teal) 55%, 
+  var(--color-blue) 65%, var(--color-cyan) 75%, var(--color-purple) 85%, 
+  var(--color-pink) 95%);
+  background-size: 1000% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 12s linear infinite;
+}
+
+/*Previous/Next Month Button*/
+.arrow.svelte-156w7na svg.svelte-156w7na {
+  color: var(--color-alternate) !important;
+}
+
+/*Previous/Next Month Button Hover*/
+.arrow.svelte-156w7na svg.svelte-156w7na:hover {
+  color: var(--color-hovered) !important;
+}
+
+/*Day*/
+#calendar-container .day {
+  color: var(--color-text-normal);
+  font-size: var(--size-text-p);
+}
+
+/*Day With Note Active*/
+.active.svelte-q3wqg9:not(:hover) {
+  background-color: var(--color-selected) !important;
+  border-radius: 50px;
+}
+
+/*Day Hover*/
+#calendar-container .day:hover{
+	background-color: var(--color-hovered);
+  color: var(--color-text-highlight);
+  transition: var(--anim-duration-slow);
+}
+
+/*Weekday Abbreviation Lables*/
+#calendar-container th {
+	padding: 6px 3px;
+	border: none;
+	background-color: var(--color-base-3);
+  font-size: var(--size-text-h6);
+}
+
+/*Week Numbers*/
+td.svelte-egt0yd {
+  font-size: var(--size-text-h6);
+}
+
+/* Week*/
+#calendar-container .week-num {
+  border-right: 2px solid var(--color-confirmed);
+	background-color: var(--color-base-3);
+  color: var(--color-text-normal);
+  border-radius: 0 !important;
+}
+
+/*Week With Note Active*/
+.active.svelte-egt0yd {
+  background-color: var(--color-selected) !important;
+  border-radius: 50px;
+}
+
+/* Week Hover*/
+#calendar-container .week-num:hover {
+	background-color: var(--color-hovered) !important;
+}
+
+/*Dot Container*/
+#calendar-container .dot-container {
+	margin-top: -2px;
+	margin-bottom: -1px;
+}
+
+/*Dot*/
+#calendar-container .dot {
+	fill: var(--color-text-faint);
+}
+
+/* Month*/
+#calendar-container .month {
+	font-size: 30px;
+	line-height: 1;
+	color: var(--color-text-bold);
+  font-weight: var(--weight-bold);
+  font-style: italic;
+}
+
+/* Year*/
+#calendar-container .year {
+	font-size: 30px;
+	line-height: 1;
+	color: var(--color-text-italic);
+  font-weight: var(--weight-maxbold);
+  font-style: italic;
 }
