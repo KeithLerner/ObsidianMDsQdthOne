@@ -331,7 +331,7 @@ box-sizing: border-box;
 /*All Popup Windows: Settings*/
 .modal {
   color: var(--color-text-normal);
-  background-color: var(--color-base-3);
+  background-color: var(--color-base-2);
 }
 
 /*Command Palette & Quick Switcher*/
@@ -373,12 +373,14 @@ box-sizing: border-box;
 .dropdown, .dropdown option {
   color: var(--color-interactable);
   background-color: var(--color-base-3);
+  font-weight: var(--weight-bold);
 }
 
 /*Dropdown Hover*/
 .dropdown:hover, button:not(.clickable-icon):hover{
   color: var(--color-text-highlight);
   background-color: var(--color-hovered);
+  font-weight: var(--weight-bold);
 }
 
 /*Sliders*/
@@ -391,9 +393,22 @@ input[type='range'] {
   padding: 0;
 }
 
+/*Text Inputs*/
+textarea, input[type='text'], 
+input[type='search'], input[type='email'], 
+input[type='password'], input[type='number'] {
+  background: var(--color-base-2);
+}
+
+/*Choices*/
+.choices__inner,
+.choices__list--dropdown {
+  background: var(--color-base-3) !important;
+}
+
 /* ------Community Content--- */
 .community-item .suggestion-highlight {
-  color: var(--color-stop);
+  color: var(--color-text-highlight);
 }
 
 .community-item:hover {
@@ -450,9 +465,10 @@ input[type='range'] {
   border-style:solid;
   border-radius: 5px;
   border-color: transparent;
+  font-weight: var(--weight-maxbold);
 }
 
-/* Nav Title */
+/* Nav Title / Vault Name */
 .nav-folder-title:hover,
 .nav-folder.mod-root > .nav-folder-title:hover {
   background-image: repeating-linear-gradient(90deg, 
@@ -464,13 +480,14 @@ input[type='range'] {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: rainbow 12s linear infinite;
+  font-weight: var(--weight-maxbold);
 }
 
 /* Active file/folder */
 .nav-file-title.is-active,
 .nav-folder-title.is-active {
   color: var(--color-selected);
-  background-color: var(--color-base-1);
+  background-color: var(--color-base-0);
 }
 
 /* File Navigator Folder Names */
@@ -483,7 +500,7 @@ input[type='range'] {
 :not(.is-grabbing) .nav-file-title:hover,
 :not(.is-grabbing) .nav-folder-title:hover,
 .tree-item-self.is-clickable:hover {
-  background-image: linear-gradient(var(--color-base-0), var(--color-base-0));
+  background-image: linear-gradient(var(--color-base-1), var(--color-base-1));
   background-color: var(--color-base-2);
   background-size: 1000% 100%;
   -webkit-text-fill-color: var(--color-hovered);
@@ -716,17 +733,19 @@ button:not(.clickable-icon) {
   border-color: transparent;
   padding-left: 8px;
   padding-right: 8px;
+  font-weight: var(--weight-bold);
 }
 
 /*Settings Buttons Hover*/
 button.mod-cta:hover,
 button:not(.clickable-icon):hover {
-  background-color: var(--color-alternate);
+  background-color: var(--color-hovered);
   color: var(--color-text-highlight);
   border-style: solid;
   border-radius: 5px;
   border-color: transparent;
   box-shadow: none;
+  font-weight: var(--weight-bold);
 }
 
 /*Secondary Settings Buttons*/
@@ -761,7 +780,7 @@ button.mod-warning {
 /*Warning Buttons Hover*/
 button.mod-warning:hover {
   background-color: var(--color-caution);
-  color: var(--color-text-bold);
+  color: var(--color-black);
   border-style: solid;
   border-radius: 5px;
   border-color: transparent;
@@ -836,19 +855,16 @@ button.mod-warning:hover {
 /*Breadcrumb File Name*/
 .view-header-title {
   color: var(--color-selected);
-  font-size: 0;
 }
 
 /*Breadcrumb Parent Name*/
 .view-header-title-parent {
   color: var(--text-faint);
-  font-size: 0;
 }
 
 /*Breadcrumb Seperator*/
 .view-header-breadcrumb-separator {
   color: var(--color-content);
-  font-size: 0;
 }
 
 /* Ribbons */
@@ -872,7 +888,7 @@ button.mod-warning:hover {
 /* Tab Background On Hover */
 .workspace-tab-header:not(.is-active):hover 
 .workspace-tab-header-inner {
-  background-color: var(--color-base-0);
+  background-color: var(--color-base-1);
 }
 
 /*Tab Header Hover*/
