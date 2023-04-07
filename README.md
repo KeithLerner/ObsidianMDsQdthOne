@@ -6,10 +6,11 @@ sQdthOne is a Obsidian MD theme with light and dark modes that enhance note taki
 - compatible with:
   - [Calendar](https://github.com/liamcain/obsidian-calendar-plugin)
   - [Kanban](https://github.com/mgmeyers/obsidian-kanban)
+  - [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
 
 ## Work in progress
 - planned compatibility with plugins:
-  - new [styles](https://github.com/mgmeyers/obsidian-style-settings)
+  - more alternate styles 
   - support for [yaml & data view](https://github.com/blacksmithgu/obsidian-dataview)
   - support for [obsidian git](https://github.com/denolehov/obsidian-git)
 
