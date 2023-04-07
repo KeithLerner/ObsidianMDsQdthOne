@@ -286,14 +286,229 @@
   
 }
 .theme-light.style-colorless {
-  
+  /* Colors for light Theme */
+  --color-white: var(--day2);
+  --color-pink: var(--pink2);
+  --color-purple: var(--indigo2);
+  --color-red: var(--crimson2);
+  --color-orange: var(--peach0);
+  --color-yellow: var(--yellow0);
+  --color-green: var(--green2);
+  --color-teal: var(--teal1);
+  --color-cyan: var(--moonstone2);
+  --color-blue: var(--frost2);
+  --color-black: var(--night2);
+  --color-base-0: var(--day0);
+  --color-base-1: var(--day1);
+  --color-base-2: var(--day2);
+  --color-base-3: var(--day3);
+  --color-base-4: var(--day4);
+  --color-base-5: var(--day5);
+  --color-selected: var(--color-orange);
+  --color-hovered: var(--color-purple);
+  --color-stop: var(--color-red);
+  --color-caution: var(--color-yellow);
+  --color-interactable: var(--color-blue);
+  --color-alternate: var(--color-pink);
+  --color-content: var(--color-teal);
+  --color-confirmed: var(--color-green);
+  --color-text-normal: var(--night1);
+  --color-text-muted: var(--night3);
+  --color-text-faint: var(--night5);
+  --color-text-bold: var(--color-cyan);
+  --color-text-italic: var(--color-green);
+  --color-text-strikethrough: var(--color-red);
+  --color-text-highlight: var(--color-white);
+  --color-text-highlight-background: var(--color-yellow);
+  --color-text-highlight-active-background: var(--color-orange);
+  --color-text-title: var(--color-cyan);
+  --color-text-h1: var(--frost0);
+  --color-text-h2: var(--frost1);
+  --color-text-h3: var(--frost2);
+  --color-text-h4: var(--frost3);
+  --color-text-h5: var(--frost4);
+  --color-text-h6: var(--frost5);
+  --color-horizontal-rule: var(--color-alternate);
+  --color-list-bullets: var(--color-pink);
+  --color-list-indentation-indicator: magenta;
+  --color-list-indentation-indicator-hover: var(--color-pink);
+  --color-checklist-empty: var(--color-stop);
+  --color-checklist-empty-border: var(--color-stop);
+  --color-checklist-full: var(--color-green);
+  --color-checklist-full-border: var(--color-green);
+  --color-tag: var(--color-yellow);
+  --color-tag-hover: var(--yellow0);
+  --color-code-normal: var(--color-text-muted);
+  --color-code-comment: var(--color-text-faint);
+  --color-code-function: var(--color-yellow);
+  --color-code-important: var(--color-orange);
+  --color-code-keyword: var(--color-pink);
+  --color-code-property: var(--color-blue);
+  --color-code-punctuation: var(--color-text-muted);
+  --color-code-string: var(--color-green);
+  --color-code-tag: var(--color-red);
+  --color-code-value: var(--color-purple);
+
+  /* Generic Coloring */
+  --background-primary:         var(--color-base-1);
+	--background-primary-alt:     var(--color-base-2);
+	--background-secondary:       var(--color-base-2);
+	--background-secondary-alt:   var(--color-base-3);
+  --text-selection:             var(--color-yellow);
+  --tab-text-color-focused-active-current: var(--color-selected);
+  --tab-text-color-active: var(--color-hovered);
+  --titlebar-background:        var(--color-base-3);
+  --titlebar-background-focused:var(--color-base-2);
 }
 .theme-dark.style-solar {
+  /* Colors for light Theme */
+  --color-white: #fdf6e3;
+  --color-pink: #d33682;
+  --color-purple: #715393;
+  --color-red: #dc322f;
+  --color-orange: #cb4b16;
+  --color-yellow: #b58900;
+  --color-green: #859900;
+  --color-teal: #2aa198;
+  --color-cyan: #268bd2;
+  --color-blue: #6c71c4;
+  --color-black: #08090a;
+  --color-base-0: #002b36;
+  --color-base-1: #013340;
+  --color-base-2: #013745;
+  --color-base-3: #023c4a;
+  --color-base-4: #034252;
+  --color-base-5: #044859;
+  --color-selected: var(--color-orange);
+  --color-hovered: var(--color-purple);
+  --color-stop: var(--color-red);
+  --color-caution: var(--color-yellow);
+  --color-interactable: var(--color-teal);
+  --color-alternate: var(--color-pink);
+  --color-content: #586e75;
+  --color-confirmed: var(--color-green);
+  --color-text-normal: #93a1a1;
+  --color-text-muted: #839496;
+  --color-text-faint: #657b83;
+  --color-text-bold: var(--color-cyan);
+  --color-text-italic: var(--color-green);
+  --color-text-strikethrough: var(--color-red);
+  --color-text-highlight: var(--color-white);
+  --color-text-highlight-background: var(--color-yellow);
+  --color-text-highlight-active-background: var(--color-orange);
+  --color-text-title: #fffaed;
+  --color-text-h1: #fffaed;
+  --color-text-h2: var(--color-white);
+  --color-text-h3: #eee8d5;
+  --color-text-h4: #e0dcc8;
+  --color-text-h5: #d7d3c1;
+  --color-text-h6: #d9d7ce;
+  --color-horizontal-rule: var(--color-alternate);
+  --color-list-bullets: var(--color-pink);
+  --color-list-indentation-indicator: magenta;
+  --color-list-indentation-indicator-hover: var(--color-pink);
+  --color-checklist-empty: var(--color-stop);
+  --color-checklist-empty-border: var(--color-stop);
+  --color-checklist-full: var(--color-green);
+  --color-checklist-full-border: var(--color-green);
+  --color-tag: var(--color-yellow);
+  --color-tag-hover: var(--yellow0);
+  --color-code-normal: var(--color-text-muted);
+  --color-code-comment: var(--color-text-faint);
+  --color-code-function: var(--color-yellow);
+  --color-code-important: var(--color-orange);
+  --color-code-keyword: var(--color-pink);
+  --color-code-property: var(--color-blue);
+  --color-code-punctuation: var(--color-text-muted);
+  --color-code-string: var(--color-green);
+  --color-code-tag: var(--color-red);
+  --color-code-value: var(--color-purple);
 
+  /* Generic Coloring */
+  --background-primary:         var(--color-base-1);
+	--background-primary-alt:     var(--color-base-2);
+	--background-secondary:       var(--color-base-2);
+	--background-secondary-alt:   var(--color-base-3);
+  --text-selection:             var(--color-yellow);
+  --tab-text-color-focused-active-current: var(--color-selected);
+  --tab-text-color-active: var(--color-hovered);
+  --titlebar-background:        var(--color-base-3);
+  --titlebar-background-focused:var(--color-base-2);
 }
-
 .theme-light.style-solar {
+  /* Colors for light Theme */
+  --color-white: #fdf6e3;
+  --color-pink: #d33682;
+  --color-purple: #715393;
+  --color-red: #dc322f;
+  --color-orange: #cb4b16;
+  --color-yellow: #b58900;
+  --color-green: #859900;
+  --color-teal: #2aa198;
+  --color-cyan: #268bd2;
+  --color-blue: #6c71c4;
+  --color-black: #08090a;
+  --color-base-0: #fffaed;
+  --color-base-1: var(--color-white);
+  --color-base-2: #eee8d5;
+  --color-base-3: #e0dcc8;
+  --color-base-4: #d7d3c1;
+  --color-base-5: #d9d7ce;
+  --color-selected: var(--color-orange);
+  --color-hovered: var(--color-purple);
+  --color-stop: var(--color-red);
+  --color-caution: var(--color-yellow);
+  --color-interactable: var(--color-blue);
+  --color-alternate: var(--color-pink);
+  --color-content: #93a1a1;
+  --color-confirmed: var(--color-green);
+  --color-text-normal: #586e75;
+  --color-text-muted: #657b83;
+  --color-text-faint: #839496;
+  --color-text-bold: var(--color-cyan);
+  --color-text-italic: var(--color-green);
+  --color-text-strikethrough: var(--color-red);
+  --color-text-highlight: var(--color-white);
+  --color-text-highlight-background: var(--color-yellow);
+  --color-text-highlight-active-background: var(--color-orange);
+  --color-text-title: #002b36;
+  --color-text-h1: #002b36;
+  --color-text-h2: #013340;
+  --color-text-h3: #013745;
+  --color-text-h4: #023c4a;
+  --color-text-h5: #034252;
+  --color-text-h6: #044859;
+  --color-horizontal-rule: var(--color-alternate);
+  --color-list-bullets: var(--color-pink);
+  --color-list-indentation-indicator: magenta;
+  --color-list-indentation-indicator-hover: var(--color-pink);
+  --color-checklist-empty: var(--color-stop);
+  --color-checklist-empty-border: var(--color-stop);
+  --color-checklist-full: var(--color-green);
+  --color-checklist-full-border: var(--color-green);
+  --color-tag: var(--color-yellow);
+  --color-tag-hover: var(--yellow0);
+  --color-code-normal: var(--color-text-muted);
+  --color-code-comment: var(--color-text-faint);
+  --color-code-function: var(--color-yellow);
+  --color-code-important: var(--color-orange);
+  --color-code-keyword: var(--color-pink);
+  --color-code-property: var(--color-blue);
+  --color-code-punctuation: var(--color-text-muted);
+  --color-code-string: var(--color-green);
+  --color-code-tag: var(--color-red);
+  --color-code-value: var(--color-purple);
 
+  /* Generic Coloring */
+  --background-primary:         var(--color-base-1);
+	--background-primary-alt:     var(--color-base-2);
+	--background-secondary:       var(--color-base-2);
+	--background-secondary-alt:   var(--color-base-3);
+  --text-selection:             var(--color-yellow);
+  --tab-text-color-focused-active-current: var(--color-selected);
+  --tab-text-color-active: var(--color-hovered);
+  --titlebar-background:        var(--color-base-3);
+  --titlebar-background-focused:var(--color-base-2);
 }
 
 /*Box Sizing Reset - this makes it easier to set any ::before and ::after pseudo-elements' dimensions,
@@ -304,27 +519,43 @@ since it includes any border and padding into the height and width values you se
 box-sizing: border-box;
 }*/
 
-/*----Startup Progress Bar Screen----*/
-/*Startup Progress Bar Window*/
+/*----Progress Bar Screen----*/
+/*Progress Bar Window*/
 .progress-bar {
   background-color: var(--color-base-1);
-  color: var(--color-text-bold);
 }
 
-/*Startup Text*/
+/*Progress Bar Background*/
+.progress-bar-line {
+  background-color: var(--color-base-3);
+  border-radius: 50px;
+}
+
+/*Progress Bar Loaded*/
+.progress-bar-subline {
+	background-image: repeating-linear-gradient(90deg, 
+  var(--color-pink) 5%, var(--color-red) 15%, var(--color-orange) 25%, 
+  var(--color-yellow) 35%, var(--color-green) 45%, var(--color-teal) 55%, 
+  var(--color-blue) 65%, var(--color-cyan) 75%, var(--color-purple) 85%, 
+  var(--color-pink) 95%);
+  background-size: 1000% 100%;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 1s linear infinite;
+  border-radius: 50px;
+}
+
+/*Progress Text*/
 .progress-bar .progress-bar-message {
-  color: var(--color-text-bold);
-  font-weight: var(--weight-extrabold);
-}
-
-/*Startup Progress Bar Background*/
-.progress-bar-indicator .progress-bar-line {
-  color: var(--color-text-bold);
-}
-
-/*Startup Progress Bar Moving Line*/
-.progress-bar-indicator .progress-bar-subline {
-  color: var(--color-horizontal-rule);
+  font-weight: var(--weight-maxbold);
+	background-image: repeating-linear-gradient(90deg, 
+  var(--color-pink) 5%, var(--color-red) 15%, var(--color-orange) 25%, 
+  var(--color-yellow) 35%, var(--color-green) 45%, var(--color-teal) 55%, 
+  var(--color-blue) 65%, var(--color-cyan) 75%, var(--color-purple) 85%, 
+  var(--color-pink) 95%);
+  background-size: 1000% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 1s linear infinite;
 }
 
 /*----Settings----*/
@@ -391,6 +622,11 @@ input[type='range'] {
   border-radius: 3px;
   height: 3px;
   padding: 0;
+}
+
+/*Slider Knobs*/
+input[type='range' i] {
+  color: magenta;
 }
 
 /*Text Inputs*/
@@ -648,6 +884,13 @@ button:hover,
   padding: 3px;
 }
 
+/*Move tab close button to the left of tab*/
+/*MODIFIED TO ONLY WORK WITH STYLE SETTINGS*/
+.sQdthOne-left-hand-close-tab 
+.workspace-tab-header-inner-close-button {
+  order: -1;
+}
+
 /* Tab Close Button */
 .workspace-tab-header-inner-close-button,
 .workspace-tab-header-inner-close-button svg {
@@ -656,6 +899,8 @@ button:hover,
   border: transparent;
   border-radius: 10px;
   border-width: 1px;
+  vertical-align: center;
+  align-self: center;
 }
 
 /* Tab Close Button On Hover */
@@ -1102,7 +1347,7 @@ body {
   --text-normal: var(--color-text-normal); /*Text body of note*/
   --text-muted: var(--color-text-muted); /*Text darker for sidebar, toggles, inactive, tags, etc*/
   --text-accent: var(--color-text-bold); /*Links*/
-  --text-accent-hover: var(--color-horizontal-rule); /*Links hover*/
+  --text-accent-hover: var(--color-hovered); /*Links hover*/
   --text-faint: var(--color-text-faint); /*Link brackets color & Gutter Numbers*/
   --text-highlight-bg: var(--color-text-highlight-background); /*Search Matches*/
   --text-highlight-bg-active: var(--color-text-highlight-active-background); /*Active Search Match (Preview Mode)*/
@@ -1134,6 +1379,22 @@ hr {
 .cm-comment {
   color: var(--color-base-5);
 }
+
+/*--Frontmatter/Metadata/Yaml--*/
+/*Reading Mode*/
+.frontmatter-container {
+  color: var(--color-base-5);
+} 
+/*Source Mode*/
+.CodeMirror-line .cm-s-obsidian .cm-hmd-frontmatter,
+.cm-meta {
+  color: var(--color-base-5);
+} 
+/*Frontmatter Tag*/
+/*Reading Mode*/
+.frontmatter-container .frontmatter-alias {
+  color: var(--color-base-5);
+} 
 
 /*--Code--*/
 /* Edit mode */
@@ -1506,26 +1767,17 @@ settings:
         label: Default
         value: style-default
       -
-        label: Custom
-        value: style-custom
-        description: Save your own color combination.
-      -
-        label: Colorless
-        value: style-colorless
-      -
         label: Solar
         value: style-solar
+  - 
+    id: sQdthOne-left-hand-close-tab
+    title: Left Close Tab Button
+    description: Moves the close tab button to the left side of the tab
+    type: class-toggle
+    allowEmpty: false
+    default: false
 */
 /* @settings */
-
-/*--Frontmatter/Metadata/Yaml--*/
-/*Reading Mode*/
-.frontmatter-container {} 
-/*Source Mode*/
-.CodeMirror-line .cm-s-obsidian .cm-hmd-frontmatter {} 
-/*Frontmatter Tag*/
-/*Reading Mode*/
-.frontmatter-container .frontmatter-alias {} 
 
 /*--Calendar--*/
 /*Vertical Cell Outlines */
@@ -1661,3 +1913,4 @@ td.svelte-egt0yd {
   font-weight: var(--weight-maxbold);
   font-style: italic;
 }
+
