@@ -1,17 +1,18 @@
 ## About
-![Sample Image](https://github.com/KeithLerner/ObsidianMDsQdthOne/blob/main/GarbledCapture.png)
+![Sample Image](https://github.com/KeithLerner/ObsidianMDsQdthOne/blob/main/GarbledGif.gif)
 sQdthOne is a Obsidian MD theme with light and dark modes that enhance note taking experiences.
 
 ## Plugin Support
 - compatible with:
+  - [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
   - [Calendar](https://github.com/liamcain/obsidian-calendar-plugin)
   - [Kanban](https://github.com/mgmeyers/obsidian-kanban)
-  - [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
+  - [Data View](https://github.com/blacksmithgu/obsidian-dataview)
 
 ## Work in progress
+Check out the [dev branch]() for early (but probably buggy) sneak peaks at work-in-progress additions.
 - planned compatibility with plugins:
-  - more alternate styles 
-  - support for [yaml & data view](https://github.com/blacksmithgu/obsidian-dataview)
+  - new [styles](https://github.com/mgmeyers/obsidian-style-settings)
   - support for [obsidian git](https://github.com/denolehov/obsidian-git)
 
 ## Resources
