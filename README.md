@@ -19,6 +19,13 @@ Please report bugs or make suggestions [here on Github](https://github.com/Keith
 
 ## Version History
 Version history starts with 1.8.0.
+### 1.8.2
+#### Changes
+- Modified calendar plugin behavior for week numbers on hover
+#### Bug Fixes
+- Bug fixes for solar theme variant
+  - Menu, status bar, and notices are now all using the correct background
+  - Additional items using the wrong reference have been color corrected
 ### 1.8.1
 #### Changes
 - Updated colors for solar theme variant to be more inline with standard solarized themes in other IDEs
