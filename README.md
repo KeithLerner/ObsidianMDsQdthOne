@@ -19,6 +19,12 @@ Please report bugs or make suggestions [here on Github](https://github.com/Keith
 
 ## Version History
 Version history starts with 1.8.0.
+### 1.8.5
+#### Changes
+- Modified menu border color and thickness
+- Updated indentation bars for different list types
+  - File tree, in-note lists, outline panel
+    - File tree and outline panel receive bottom left radius to match clickables
 ### 1.8.4
 #### Bug Fixes
 - Bug fixes for border colors in menus
