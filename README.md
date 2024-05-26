@@ -19,6 +19,9 @@ Please report bugs or make suggestions [here on Github](https://github.com/Keith
 
 ## Version History
 Version history starts with 1.8.0.
+### 1.8.4
+#### Bug Fixes
+- Bug fixes for border colors in menus
 ### 1.8.3
 #### Bug Fixes
 - Bug fixes for link colors in colorless theme variant
