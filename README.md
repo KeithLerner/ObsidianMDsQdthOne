@@ -19,6 +19,9 @@ Please report bugs or make suggestions [here on Github](https://github.com/Keith
 
 ## Version History
 Version history starts with 1.8.0.
+### 1.9.0
+#### Changes
+- Updated checkboxes to use style settings and match a larger community effort to standardize alternate checkboxes.
 ### 1.8.5
 #### Changes
 - Modified menu border color and thickness
