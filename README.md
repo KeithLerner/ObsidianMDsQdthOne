@@ -12,7 +12,7 @@ This project is something I use on a daily basis and will be continuously update
 ## Support Me
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B4U35FR)
 
-Visit [KeithLerner.net](https://www.KeithLerner.net/) to learn more about me. This site is possible thanks to the [Obsidian webpage export](https://github.com/KosmosisDire/obsidian-webpage-export) plugin. Some of the content is enabled through other plugins, all compatable with this theme. Reach out if you're interested in this process.
+Visit [KeithLerner.net](https://www.KeithLerner.net/) to learn more about me.
 
 ## Bugs and Suggestions
 Please report bugs or make suggestions [here on Github](https://github.com/KeithLerner/ObsidianMDsQdthOne/issues)
